@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import fernandoMachado from "@/assets/fernando-machado-ceo.png";
+import googlePartnerBadge from "@/assets/google-partner-badge.png";
+import metaPartnerBadge from "@/assets/meta-partner-badge.png";
+import rdPartnerBadge from "@/assets/rd-partner-badge.png";
 
 const FinalCTA = () => {
   const [formData, setFormData] = useState({
@@ -61,19 +63,25 @@ const FinalCTA = () => {
               ))}
             </div>
 
-            {/* Fernando Machado Image */}
-            <div className="flex items-center gap-4 p-6 bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] border border-white/10 rounded-2xl shadow-xl">
-              <div className="relative w-24 h-24 rounded-full overflow-hidden border-3 border-[hsl(var(--f5-orange))] flex-shrink-0 shadow-[0_0_30px_hsl(var(--f5-orange)/0.4)]">
+            {/* Partner Badges */}
+            <div className="p-6 bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] border border-white/10 rounded-2xl shadow-xl">
+              <p className="text-white font-semibold text-sm mb-4 text-center">Parceiros Oficiais</p>
+              <div className="flex items-center justify-center gap-6 flex-wrap">
                 <img
-                  src={fernandoMachado}
-                  alt="Fernando Machado - CEO"
-                  className="w-full h-full object-cover object-top"
+                  src={googlePartnerBadge}
+                  alt="Google Partner"
+                  className="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
-              </div>
-              <div>
-                <p className="text-white font-bold text-xl mb-1">Fernando Machado</p>
-                <p className="text-[hsl(var(--f5-orange))] text-sm font-semibold mb-1">CEO & Fundador</p>
-                <p className="text-[hsl(var(--text-secondary))] text-xs">F5 Marketing</p>
+                <img
+                  src={metaPartnerBadge}
+                  alt="Meta Business Partner"
+                  className="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                />
+                <img
+                  src={rdPartnerBadge}
+                  alt="RD Station Partner"
+                  className="h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                />
               </div>
             </div>
           </div>
