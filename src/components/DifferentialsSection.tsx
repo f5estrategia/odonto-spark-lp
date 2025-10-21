@@ -1,5 +1,7 @@
 import { Briefcase, Megaphone, DollarSign, Wrench, Video } from "lucide-react";
 import fernandoMachado from "@/assets/fernando-machado-ceo.png";
+import f5LogoWhite from "@/assets/f5-logo-white.png";
+import primeLogo from "@/assets/prime-logo.png";
 
 const DifferentialsSection = () => {
   return (
@@ -17,42 +19,44 @@ const DifferentialsSection = () => {
         {/* Ecosystem Visual */}
         <div className="flex justify-center items-center my-24 relative min-h-[500px]">
           {/* Center Circle */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-full flex flex-col items-center justify-center shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] z-10">
-            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-2">
-              <span className="text-2xl font-bold text-[hsl(var(--f5-orange))]">F5</span>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-full flex flex-col items-center justify-center shadow-[0_20px_50px_hsl(var(--f5-orange)/0.6)] z-10">
+            <div className="flex flex-col items-center gap-2">
+              <img src={f5LogoWhite} alt="F5 Estratégia" className="h-8 w-auto" />
+              <div className="h-px w-12 bg-white/30" />
+              <img src={primeLogo} alt="Prime Franchising Solutions" className="h-6 w-auto" />
             </div>
-            <span className="text-sm font-bold text-white uppercase tracking-wider">Estratégia</span>
+            <span className="text-xs font-bold text-white uppercase tracking-wider mt-3">Estratégia</span>
           </div>
 
           {/* Orbiting Items */}
           <div className="relative w-full max-w-[500px] h-[500px]">
             {/* Item 1 - Top */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 bg-[hsl(var(--luxury-dark))] border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 hover:bg-gradient-to-r hover:from-[hsl(var(--f5-orange))] hover:to-[hsl(var(--f5-orange-dark))] hover:scale-110 transition-all duration-300 hover:shadow-[0_10px_30px_hsl(var(--f5-orange)/0.4)] group">
-              <Briefcase className="w-7 h-7 text-[hsl(var(--f5-orange))] group-hover:text-white transition-colors" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-28 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float">
+              <Briefcase className="w-8 h-8 text-[hsl(var(--f5-orange))] transition-colors" />
               <span className="text-xs text-white font-medium">Consultoria</span>
             </div>
 
             {/* Item 2 - Top Right */}
-            <div className="absolute top-[30%] right-0 w-24 h-24 bg-[hsl(var(--luxury-dark))] border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 hover:bg-gradient-to-r hover:from-[hsl(var(--f5-orange))] hover:to-[hsl(var(--f5-orange-dark))] hover:scale-110 transition-all duration-300 hover:shadow-[0_10px_30px_hsl(var(--f5-orange)/0.4)] group">
-              <Megaphone className="w-7 h-7 text-[hsl(var(--f5-orange))] group-hover:text-white transition-colors" />
+            <div className="absolute top-[30%] right-0 w-28 h-28 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float" style={{ animationDelay: "1s" }}>
+              <Megaphone className="w-8 h-8 text-[hsl(var(--f5-orange))] transition-colors" />
               <span className="text-xs text-white font-medium">Marketing</span>
             </div>
 
             {/* Item 3 - Bottom Right */}
-            <div className="absolute bottom-[30%] right-0 w-24 h-24 bg-[hsl(var(--luxury-dark))] border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 hover:bg-gradient-to-r hover:from-[hsl(var(--f5-orange))] hover:to-[hsl(var(--f5-orange-dark))] hover:scale-110 transition-all duration-300 hover:shadow-[0_10px_30px_hsl(var(--f5-orange)/0.4)] group">
-              <DollarSign className="w-7 h-7 text-[hsl(var(--f5-orange))] group-hover:text-white transition-colors" />
+            <div className="absolute bottom-[30%] right-0 w-28 h-28 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float" style={{ animationDelay: "2s" }}>
+              <DollarSign className="w-8 h-8 text-[hsl(var(--f5-orange))] transition-colors" />
               <span className="text-xs text-white font-medium">Vendas</span>
             </div>
 
             {/* Item 4 - Bottom */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-24 bg-[hsl(var(--luxury-dark))] border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 hover:bg-gradient-to-r hover:from-[hsl(var(--f5-orange))] hover:to-[hsl(var(--f5-orange-dark))] hover:scale-110 transition-all duration-300 hover:shadow-[0_10px_30px_hsl(var(--f5-orange)/0.4)] group">
-              <Wrench className="w-7 h-7 text-[hsl(var(--f5-orange))] group-hover:text-white transition-colors" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-28 h-28 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float" style={{ animationDelay: "3s" }}>
+              <Wrench className="w-8 h-8 text-[hsl(var(--f5-orange))] transition-colors" />
               <span className="text-xs text-white font-medium text-center">Infraestrutura</span>
             </div>
 
             {/* Item 5 - Bottom Left */}
-            <div className="absolute bottom-[30%] left-0 w-24 h-24 bg-[hsl(var(--luxury-dark))] border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 hover:bg-gradient-to-r hover:from-[hsl(var(--f5-orange))] hover:to-[hsl(var(--f5-orange-dark))] hover:scale-110 transition-all duration-300 hover:shadow-[0_10px_30px_hsl(var(--f5-orange)/0.4)] group">
-              <Video className="w-7 h-7 text-[hsl(var(--f5-orange))] group-hover:text-white transition-colors" />
+            <div className="absolute bottom-[30%] left-0 w-28 h-28 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float" style={{ animationDelay: "4s" }}>
+              <Video className="w-8 h-8 text-[hsl(var(--f5-orange))] transition-colors" />
               <span className="text-xs text-white font-medium">Audiovisual</span>
             </div>
           </div>
