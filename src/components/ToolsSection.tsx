@@ -54,16 +54,16 @@ const ToolsSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-12 md:mb-16 px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
             Nossas <span className="text-[hsl(var(--f5-orange))]">Ferramentas</span>
           </h2>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-white/70 max-w-2xl mx-auto">
             Plataformas estratégicas para resultados mensuráveis
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {tools.map((tool, index) => {
             return (
               <div

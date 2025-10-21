@@ -7,54 +7,54 @@ const DifferentialsSection = () => {
   return (
     <section id="diferenciais" className="py-24 bg-gradient-to-b from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] relative">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-white to-[hsl(var(--text-secondary))] bg-clip-text text-transparent mb-6">
+        <div className="text-center mb-12 md:mb-16 max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-br from-white to-[hsl(var(--text-secondary))] bg-clip-text text-transparent mb-4 md:mb-6">
             Não somos uma agência generalista. Somos especialistas no seu mercado.
           </h2>
-          <p className="text-lg text-[hsl(var(--text-secondary))] leading-relaxed">
+          <p className="text-base md:text-lg text-[hsl(var(--text-secondary))] leading-relaxed">
             70% dos nossos clientes são clínicas. Nós não apenas entendemos o seu negócio, nós o vivemos. Fazemos parte do maior ecossistema para odontologia do Brasil, com empresas de consultoria, vendas e até construção de clínicas. Nós sabemos o jogo que você está jogando.
           </p>
         </div>
 
-        {/* Ecosystem Visual */}
-        <div className="flex justify-center items-center my-24 relative min-h-[600px]">
+        {/* Ecosystem Visual - Responsivo */}
+        <div className="flex justify-center items-center my-16 md:my-24 relative min-h-[400px] md:min-h-[600px]">
           {/* Center Logos */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center gap-4">
-            <img src={f5LogoWhite} alt="F5 Estratégia" className="h-12 w-auto drop-shadow-[0_0_20px_hsl(var(--f5-orange)/0.6)]" />
-            <div className="h-px w-16 bg-[hsl(var(--f5-orange))]/40" />
-            <img src={primeLogo} alt="Prime Franchising Solutions" className="h-12 w-auto drop-shadow-[0_0_20px_hsl(var(--f5-orange)/0.4)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center gap-3 md:gap-4">
+            <img src={f5LogoWhite} alt="F5 Estratégia" className="h-8 md:h-12 w-auto drop-shadow-[0_0_20px_hsl(var(--f5-orange)/0.6)]" />
+            <div className="h-px w-12 md:w-16 bg-[hsl(var(--f5-orange))]/40" />
+            <img src={primeLogo} alt="Prime Franchising Solutions" className="h-8 md:h-12 w-auto drop-shadow-[0_0_20px_hsl(var(--f5-orange)/0.4)]" />
           </div>
 
           {/* Orbiting Items - Positioned in a circle */}
-          <div className="relative w-full max-w-[700px] h-[700px]">
+          <div className="relative w-full max-w-[400px] h-[400px] md:max-w-[700px] md:h-[700px]">
             {/* Item 1 - Top */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float">
-              <Briefcase className="w-10 h-10 text-[hsl(var(--f5-orange))] transition-colors" />
-              <span className="text-sm text-white font-medium">Consultoria</span>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 md:w-32 md:h-32 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-1 md:gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float">
+              <Briefcase className="w-6 h-6 md:w-10 md:h-10 text-[hsl(var(--f5-orange))] transition-colors" />
+              <span className="text-xs md:text-sm text-white font-medium">Consultoria</span>
             </div>
 
-            {/* Item 2 - Top Right (2 o'clock) */}
-            <div className="absolute top-[15%] right-[10%] w-32 h-32 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float" style={{ animationDelay: "1.2s" }}>
-              <Megaphone className="w-10 h-10 text-[hsl(var(--f5-orange))] transition-colors" />
-              <span className="text-sm text-white font-medium">Marketing</span>
+            {/* Item 2 - Top Right */}
+            <div className="absolute top-[15%] right-[5%] md:right-[10%] w-24 h-24 md:w-32 md:h-32 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-1 md:gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float" style={{ animationDelay: "1.2s" }}>
+              <Megaphone className="w-6 h-6 md:w-10 md:h-10 text-[hsl(var(--f5-orange))] transition-colors" />
+              <span className="text-xs md:text-sm text-white font-medium">Marketing</span>
             </div>
 
-            {/* Item 3 - Bottom Right (4 o'clock) */}
-            <div className="absolute bottom-[15%] right-[10%] w-32 h-32 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float" style={{ animationDelay: "2.4s" }}>
-              <DollarSign className="w-10 h-10 text-[hsl(var(--f5-orange))] transition-colors" />
-              <span className="text-sm text-white font-medium">Vendas</span>
+            {/* Item 3 - Bottom Right */}
+            <div className="absolute bottom-[15%] right-[5%] md:right-[10%] w-24 h-24 md:w-32 md:h-32 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-1 md:gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float" style={{ animationDelay: "2.4s" }}>
+              <DollarSign className="w-6 h-6 md:w-10 md:h-10 text-[hsl(var(--f5-orange))] transition-colors" />
+              <span className="text-xs md:text-sm text-white font-medium">Vendas</span>
             </div>
 
-            {/* Item 4 - Bottom Left (8 o'clock) */}
-            <div className="absolute bottom-[15%] left-[10%] w-32 h-32 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float" style={{ animationDelay: "3.6s" }}>
-              <Wrench className="w-10 h-10 text-[hsl(var(--f5-orange))] transition-colors" />
-              <span className="text-sm text-white font-medium text-center">Infraestrutura</span>
+            {/* Item 4 - Bottom Left */}
+            <div className="absolute bottom-[15%] left-[5%] md:left-[10%] w-24 h-24 md:w-32 md:h-32 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-1 md:gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float" style={{ animationDelay: "3.6s" }}>
+              <Wrench className="w-6 h-6 md:w-10 md:h-10 text-[hsl(var(--f5-orange))] transition-colors" />
+              <span className="text-xs md:text-sm text-white font-medium text-center">Infraestrutura</span>
             </div>
 
-            {/* Item 5 - Top Left (10 o'clock) */}
-            <div className="absolute top-[15%] left-[10%] w-32 h-32 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float" style={{ animationDelay: "4.8s" }}>
-              <Video className="w-10 h-10 text-[hsl(var(--f5-orange))] transition-colors" />
-              <span className="text-sm text-white font-medium">Audiovisual</span>
+            {/* Item 5 - Top Left */}
+            <div className="absolute top-[15%] left-[5%] md:left-[10%] w-24 h-24 md:w-32 md:h-32 backdrop-blur-md bg-black/50 border-2 border-[hsl(var(--f5-orange))] rounded-2xl flex flex-col items-center justify-center gap-1 md:gap-2 shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_50px_hsl(var(--f5-orange)/0.4)] group animate-float" style={{ animationDelay: "4.8s" }}>
+              <Video className="w-6 h-6 md:w-10 md:h-10 text-[hsl(var(--f5-orange))] transition-colors" />
+              <span className="text-xs md:text-sm text-white font-medium">Audiovisual</span>
             </div>
           </div>
         </div>

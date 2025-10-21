@@ -39,17 +39,17 @@ const FinalCTA = () => {
   return (
     <section id="contato" className="py-24 bg-[hsl(var(--luxury-black))]">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          {/* Left - Info + CEO Image */}
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+        <div className="grid gap-8 md:gap-12 items-center mt-16 md:mt-24 max-w-5xl mx-auto">
+          {/* Left - Info + CEO Image - Ordem invertida em mobile */}
+          <div className="order-2 md:order-1">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6 leading-tight">
               Pronto para transformar seu marketing no seu maior vendedor?
             </h2>
-            <p className="text-lg text-[hsl(var(--text-secondary))] mb-8 leading-relaxed">
+            <p className="text-base md:text-lg text-[hsl(var(--text-secondary))] mb-6 md:mb-8 leading-relaxed">
               Agende uma sessão de diagnóstico gratuita. Você vai sair com um plano de ação claro para sua clínica, mesmo que decida não trabalhar conosco.
             </p>
 
-            <div className="space-y-4 mb-8">
+            <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
               {[
                 "Análise completa da sua presença digital",
                 "Mapeamento de oportunidades de crescimento",
@@ -57,38 +57,38 @@ const FinalCTA = () => {
                 "Sem compromisso - 100% gratuito",
               ].map((benefit, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-[hsl(var(--f5-orange))] flex-shrink-0 mt-0.5" />
-                  <span className="text-[hsl(var(--text-secondary))]">{benefit}</span>
+                  <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-[hsl(var(--f5-orange))] flex-shrink-0 mt-0.5" />
+                  <span className="text-sm md:text-base text-[hsl(var(--text-secondary))]">{benefit}</span>
                 </div>
               ))}
             </div>
 
             {/* Partner Badges */}
-            <div className="p-6 bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] border border-white/10 rounded-2xl shadow-xl">
-              <p className="text-white font-semibold text-sm mb-4 text-center">Parceiros Oficiais</p>
-              <div className="flex items-center justify-center gap-6 flex-wrap">
+            <div className="p-4 md:p-6 bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] border border-white/10 rounded-2xl shadow-xl">
+              <p className="text-white font-semibold text-xs md:text-sm mb-3 md:mb-4 text-center">Parceiros Oficiais</p>
+              <div className="flex items-center justify-center gap-4 md:gap-6 flex-wrap">
                 <img
                   src={googlePartnerBadge}
                   alt="Google Partner"
-                  className="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  className="h-10 md:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
                 <img
                   src={metaPartnerBadge}
                   alt="Meta Business Partner"
-                  className="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  className="h-10 md:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
                 <img
                   src={rdPartnerBadge}
                   alt="RD Station Partner"
-                  className="h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  className="h-8 md:h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
               </div>
             </div>
           </div>
 
-          {/* Right - Form */}
-          <div className="bg-[hsl(var(--luxury-dark))] border border-white/10 rounded-3xl p-8 shadow-2xl">
-            <h3 className="text-2xl font-bold text-white mb-6">Agende sua Sessão Estratégica</h3>
+          {/* Right - Form - Aparece primeiro em mobile */}
+          <div className="order-1 md:order-2 bg-[hsl(var(--luxury-dark))] border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Agende sua Sessão Estratégica</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="relative">
