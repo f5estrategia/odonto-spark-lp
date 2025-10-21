@@ -139,132 +139,156 @@ const ResultsSection = () => {
         </div>
 
         {/* TIER 2 - CASES DE APOIO */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
           {/* #4 - ORAL UNIC NATAL */}
-          <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-            <div className="p-6">
-              <h4 className="text-lg font-bold text-white mb-3">ORAL UNIC NATAL</h4>
+          <div className="group bg-[hsl(var(--luxury-dark))] border border-white/5 rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-white/10">
+            <div className="p-6 space-y-5">
+              <h4 className="text-base font-bold text-white tracking-tight">ORAL UNIC NATAL</h4>
               
-              <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
-                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">Vendas</span>
-                <span className="text-2xl font-extrabold text-white">R$ 800k+</span>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl blur-sm opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl p-4 border border-[hsl(var(--f5-orange))]/20">
+                  <div className="text-[10px] font-bold text-white/80 uppercase tracking-[3px] mb-1">Vendas</div>
+                  <div className="text-3xl font-black text-white">R$ 800k+</div>
+                </div>
               </div>
 
-              <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
-                R$42 mil se transformaram em <strong className="text-white">R$800 mil</strong>. Crescimento previsível mês após mês.
+              <p className="text-[hsl(var(--text-secondary))] text-sm leading-relaxed">
+                R$42 mil se transformaram em <span className="text-white font-semibold">R$800 mil</span>. Crescimento previsível mês após mês.
               </p>
-              <div className="text-xs text-[hsl(var(--text-muted))]">Período: 12 meses</div>
+              <div className="text-xs text-[hsl(var(--text-muted))] pt-2 border-t border-white/5">Período: 12 meses</div>
             </div>
           </div>
 
           {/* #5 - ORAL UNIC IBIRAMA */}
-          <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-            <div className="p-6">
-              <h4 className="text-lg font-bold text-white mb-3">ORAL UNIC IBIRAMA</h4>
+          <div className="group bg-[hsl(var(--luxury-dark))] border border-white/5 rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-white/10">
+            <div className="p-6 space-y-5">
+              <h4 className="text-base font-bold text-white tracking-tight">ORAL UNIC IBIRAMA</h4>
               
-              <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
-                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">ROAS</span>
-                <span className="text-2xl font-extrabold text-white">64,65x</span>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl blur-sm opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl p-4 border border-[hsl(var(--f5-orange))]/20">
+                  <div className="text-[10px] font-bold text-white/80 uppercase tracking-[3px] mb-1">ROAS</div>
+                  <div className="text-3xl font-black text-white">64,65x</div>
+                </div>
               </div>
 
-              <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
-                <strong className="text-white">52 vendas em 30 dias</strong>. R$352 mil faturados. Ticket médio de R$6.774.
+              <p className="text-[hsl(var(--text-secondary))] text-sm leading-relaxed">
+                <span className="text-white font-semibold">52 vendas em 30 dias</span>. R$352 mil faturados. Ticket médio de R$6.774.
               </p>
             </div>
           </div>
 
           {/* #6 - ORAL UNIC PRESIDENTE PRUDENTE */}
-          <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-            <div className="p-6">
-              <h4 className="text-lg font-bold text-white mb-3">ORAL UNIC PRES. PRUDENTE</h4>
+          <div className="group bg-[hsl(var(--luxury-dark))] border border-white/5 rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-white/10">
+            <div className="p-6 space-y-5">
+              <h4 className="text-base font-bold text-white tracking-tight">ORAL UNIC PRES. PRUDENTE</h4>
               
-              <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
-                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">ROAS</span>
-                <span className="text-2xl font-extrabold text-white">28x</span>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl blur-sm opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl p-4 border border-[hsl(var(--f5-orange))]/20">
+                  <div className="text-[10px] font-bold text-white/80 uppercase tracking-[3px] mb-1">ROAS</div>
+                  <div className="text-3xl font-black text-white">28x</div>
+                </div>
               </div>
 
-              <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
-                <strong className="text-white">R$93.100 efetivados</strong> em apenas 18 dias. Velocidade e conversão.
+              <p className="text-[hsl(var(--text-secondary))] text-sm leading-relaxed">
+                <span className="text-white font-semibold">R$93.100 efetivados</span> em apenas 18 dias. Velocidade e conversão.
               </p>
             </div>
           </div>
 
           {/* #7 - INNOVARE SORRISOS */}
-          <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-            <div className="p-6">
-              <h4 className="text-lg font-bold text-white mb-3">INNOVARE SORRISOS</h4>
+          <div className="group bg-[hsl(var(--luxury-dark))] border border-white/5 rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-white/10">
+            <div className="p-6 space-y-5">
+              <h4 className="text-base font-bold text-white tracking-tight">INNOVARE SORRISOS</h4>
               
-              <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
-                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">Vendas</span>
-                <span className="text-2xl font-extrabold text-white">R$ 105k</span>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl blur-sm opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl p-4 border border-[hsl(var(--f5-orange))]/20">
+                  <div className="text-[10px] font-bold text-white/80 uppercase tracking-[3px] mb-1">Vendas</div>
+                  <div className="text-3xl font-black text-white">R$ 105k</div>
+                </div>
               </div>
 
-              <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
-                Mais de <strong className="text-white">R$105 mil em vendas</strong> em 30 dias. Crescimento acelerado.
+              <p className="text-[hsl(var(--text-secondary))] text-sm leading-relaxed">
+                Mais de <span className="text-white font-semibold">R$105 mil em vendas</span> em 30 dias. Crescimento acelerado.
               </p>
             </div>
           </div>
 
           {/* #8 - CLINIC DENTE */}
-          <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-            <div className="p-6">
-              <h4 className="text-lg font-bold text-white mb-3">CLINIC DENTE</h4>
+          <div className="group bg-[hsl(var(--luxury-dark))] border border-white/5 rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-white/10">
+            <div className="p-6 space-y-5">
+              <h4 className="text-base font-bold text-white tracking-tight">CLINIC DENTE</h4>
               
-              <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
-                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">Vendas</span>
-                <span className="text-2xl font-extrabold text-white">R$ 103k</span>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl blur-sm opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl p-4 border border-[hsl(var(--f5-orange))]/20">
+                  <div className="text-[10px] font-bold text-white/80 uppercase tracking-[3px] mb-1">Vendas</div>
+                  <div className="text-3xl font-black text-white">R$ 103k</div>
+                </div>
               </div>
 
-              <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
-                <strong className="text-white">R$103.160 em vendas</strong> com tráfego pago em apenas 1 mês.
+              <p className="text-[hsl(var(--text-secondary))] text-sm leading-relaxed">
+                <span className="text-white font-semibold">R$103.160 em vendas</span> com tráfego pago em apenas 1 mês.
               </p>
             </div>
           </div>
 
           {/* #9 - SERIDÓ MED */}
-          <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-            <div className="p-6">
-              <h4 className="text-lg font-bold text-white mb-3">SERIDÓ MED</h4>
+          <div className="group bg-[hsl(var(--luxury-dark))] border border-white/5 rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-white/10">
+            <div className="p-6 space-y-5">
+              <h4 className="text-base font-bold text-white tracking-tight">SERIDÓ MED</h4>
               
-              <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
-                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">Receita</span>
-                <span className="text-2xl font-extrabold text-white">R$ 100k</span>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl blur-sm opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl p-4 border border-[hsl(var(--f5-orange))]/20">
+                  <div className="text-[10px] font-bold text-white/80 uppercase tracking-[3px] mb-1">Receita</div>
+                  <div className="text-3xl font-black text-white">R$ 100k</div>
+                </div>
               </div>
 
-              <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
-                <strong className="text-white">R$100 mil em receita</strong> com investimento de apenas R$3.256 em 1 mês.
+              <p className="text-[hsl(var(--text-secondary))] text-sm leading-relaxed">
+                <span className="text-white font-semibold">R$100 mil em receita</span> com investimento de apenas R$3.256 em 1 mês.
               </p>
             </div>
           </div>
 
           {/* #10 - ODONTO EXCELLENCE */}
-          <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-            <div className="p-6">
-              <h4 className="text-lg font-bold text-white mb-3">ODONTO EXCELLENCE</h4>
+          <div className="group bg-[hsl(var(--luxury-dark))] border border-white/5 rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-white/10">
+            <div className="p-6 space-y-5">
+              <h4 className="text-base font-bold text-white tracking-tight">ODONTO EXCELLENCE</h4>
               
-              <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
-                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">CPL</span>
-                <span className="text-2xl font-extrabold text-white">R$ 24</span>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl blur-sm opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl p-4 border border-[hsl(var(--f5-orange))]/20">
+                  <div className="text-[10px] font-bold text-white/80 uppercase tracking-[3px] mb-1">CPL</div>
+                  <div className="text-3xl font-black text-white">R$ 24</div>
+                </div>
               </div>
 
-              <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
-                CPL reduzido de <strong className="text-white">R$150 para R$24</strong> em menos de 30 dias.
+              <p className="text-[hsl(var(--text-secondary))] text-sm leading-relaxed">
+                CPL reduzido de <span className="text-white font-semibold">R$150 para R$24</span> em menos de 30 dias.
               </p>
             </div>
           </div>
 
           {/* #11 - ORAL UNIC SERTÃOZINHO */}
-          <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-            <div className="p-6">
-              <h4 className="text-lg font-bold text-white mb-3">ORAL UNIC SERTÃOZINHO</h4>
+          <div className="group bg-[hsl(var(--luxury-dark))] border border-white/5 rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-white/10">
+            <div className="p-6 space-y-5">
+              <h4 className="text-base font-bold text-white tracking-tight">ORAL UNIC SERTÃOZINHO</h4>
               
-              <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
-                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">CPL</span>
-                <span className="text-2xl font-extrabold text-white">R$ 5,54</span>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl blur-sm opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl p-4 border border-[hsl(var(--f5-orange))]/20">
+                  <div className="text-[10px] font-bold text-white/80 uppercase tracking-[3px] mb-1">CPL</div>
+                  <div className="text-3xl font-black text-white">R$ 5,54</div>
+                </div>
               </div>
 
-              <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
-                CPL reduzido de <strong className="text-white">R$65 para R$5,54</strong> em menos de 24h.
+              <p className="text-[hsl(var(--text-secondary))] text-sm leading-relaxed">
+                CPL reduzido de <span className="text-white font-semibold">R$65 para R$5,54</span> em menos de 24h.
               </p>
             </div>
           </div>
