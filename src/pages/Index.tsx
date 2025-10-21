@@ -3,6 +3,7 @@ import HeroLuxury from "@/components/HeroLuxury";
 import SocialProofBar from "@/components/SocialProofBar";
 import PainPoints from "@/components/PainPoints";
 import Methodology from "@/components/Methodology";
+import ToolsSection from "@/components/ToolsSection";
 import ResultsSection from "@/components/ResultsSection";
 import DifferentialsSection from "@/components/DifferentialsSection";
 import FinalCTA from "@/components/FinalCTA";
@@ -17,6 +18,7 @@ const Index = () => {
       <ResultsSection />
       <PainPoints />
       <Methodology />
+      <ToolsSection />
       <DifferentialsSection />
       <FinalCTA />
       <Footer />

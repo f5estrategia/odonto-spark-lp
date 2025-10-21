@@ -1,0 +1,114 @@
+import { Target, Users, RefreshCw } from "lucide-react";
+
+const ToolsSection = () => {
+  const tools = [
+    {
+      icon: Target,
+      platform: "Google Ads",
+      title: "Alta intenção de compra",
+      description: "Atingimos clientes no exato momento em que procuram soluções",
+      features: [
+        "Palavras-chave estratégicas",
+        "Segmentação demográfica",
+        "Remarketing inteligente",
+        "Negativação de palavras",
+        "Otimização de leilão"
+      ]
+    },
+    {
+      icon: Users,
+      platform: "Meta Ads",
+      title: "Facebook e Instagram",
+      description: "Campanhas direcionadas para o perfil do seu público",
+      features: [
+        "Dados demográficos avançados",
+        "Interesses e comportamentos",
+        "Públicos personalizados",
+        "Imagens, vídeos e carrossel",
+        "Stories e Reels"
+      ]
+    },
+    {
+      icon: RefreshCw,
+      platform: "CRM & Funil",
+      title: "Novo funil para vendas saudáveis",
+      description: "Sistema completo de gestão e recompra de pacientes",
+      features: [
+        "Tráfego qualificado",
+        "Lead tracking",
+        "Lead que recompra",
+        "Gestão de pacientes",
+        "Ciclo contínuo de vendas"
+      ]
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-gradient-to-b from-[hsl(var(--luxury-black))] to-[hsl(var(--luxury-black))/95] relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[hsl(var(--f5-orange))] rounded-full blur-[128px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[hsl(var(--f5-orange))] rounded-full blur-[128px]" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Nossas <span className="text-[hsl(var(--f5-orange))]">Ferramentas</span>
+          </h2>
+          <p className="text-xl text-white/70 max-w-2xl mx-auto">
+            Plataformas estratégicas para resultados mensuráveis
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {tools.map((tool, index) => {
+            const Icon = tool.icon;
+            return (
+              <div
+                key={index}
+                className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] rounded-2xl p-8 border border-white/10 hover:border-[hsl(var(--f5-orange))]/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,94,0,0.15)]"
+              >
+                {/* Icon */}
+                <div className="mb-6 relative">
+                  <div className="w-16 h-16 rounded-xl bg-[hsl(var(--f5-orange))]/10 border border-[hsl(var(--f5-orange))]/30 flex items-center justify-center group-hover:bg-[hsl(var(--f5-orange))]/20 transition-all duration-300">
+                    <Icon className="w-8 h-8 text-[hsl(var(--f5-orange))]" />
+                  </div>
+                </div>
+
+                {/* Platform badge */}
+                <div className="inline-block px-4 py-1.5 rounded-full border border-[hsl(var(--f5-orange))]/30 mb-4">
+                  <span className="text-[hsl(var(--f5-orange))] font-semibold text-sm">
+                    {tool.platform}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-2xl font-bold mb-3 text-white">
+                  {tool.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-white/70 mb-6 text-sm leading-relaxed">
+                  {tool.description}
+                </p>
+
+                {/* Features list */}
+                <ul className="space-y-2">
+                  {tool.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-white/60">
+                      <span className="text-[hsl(var(--f5-orange))] mt-1 flex-shrink-0">▸</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ToolsSection;
