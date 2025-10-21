@@ -32,20 +32,16 @@ const FinalCTA = () => {
       // Validar dados
       const validatedData = formSchema.parse(formData);
 
-      // Converter para FormData (formato esperado pelo Google Apps Script)
-      const formDataToSend = new FormData();
-      formDataToSend.append('nome', validatedData.nome);
-      formDataToSend.append('email', validatedData.email);
-      formDataToSend.append('telefone', validatedData.telefone);
-      formDataToSend.append('clinica', validatedData.clinica);
-
       // Enviar para Google Sheets
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbyFhpPx8IEZsdhBpO5odGgGmPeaIfsXUpNQMLW6x6DmWuvVXUpI6SqX0qTmFPupt6Yj/exec",
         {
           method: "POST",
           mode: "no-cors",
-          body: formDataToSend,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(validatedData),
         }
       );
 
