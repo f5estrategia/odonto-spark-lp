@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import fernandoMachado from "@/assets/fernando-machado.png";
 
 const HeroLuxury = () => {
   const scrollToForm = () => {
@@ -62,7 +63,7 @@ const HeroLuxury = () => {
               {/* CEO Image */}
               <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border border-white/10">
                 <img
-                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&h=1000&fit=crop"
+                  src={fernandoMachado}
                   alt="Fernando Machado - CEO"
                   className="w-full h-full object-cover"
                 />
