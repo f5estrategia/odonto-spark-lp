@@ -1,51 +1,78 @@
+import { Phone, Mail, MapPin } from "lucide-react";
+
 const Footer = () => {
   return (
-    <footer className="bg-secondary/30 border-t border-border py-12" id="contato">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                <span className="text-xl font-bold text-primary-foreground">F5</span>
+    <footer className="bg-[hsl(var(--luxury-black))] border-t border-white/8 py-12">
+      <div className="container mx-auto px-6">
+        <div className="grid md:grid-cols-3 gap-12 mb-8">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl flex items-center justify-center">
+                <span className="text-xl font-bold text-white">F5</span>
               </div>
-              <span className="font-bold text-lg">Odonto</span>
+              <span className="text-xl font-bold text-white">Estratégia</span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Transformando investimento em pacientes de alto valor desde 2020.
+            <p className="text-sm text-[hsl(var(--text-secondary))] leading-relaxed">
+              Especialistas em marketing para clínicas odontológicas, estéticas e de saúde. Transformamos investimento em crescimento previsível.
             </p>
           </div>
 
+          {/* Solutions */}
           <div>
-            <h4 className="font-bold mb-4">Navegação</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#metodologia" className="hover:text-primary transition-colors">A Metodologia</a></li>
-              <li><a href="#resultados" className="hover:text-primary transition-colors">Resultados</a></li>
-              <li><a href="#diferenciais" className="hover:text-primary transition-colors">Diferenciais</a></li>
-              <li><a href="#contato" className="hover:text-primary transition-colors">Contato</a></li>
+            <h4 className="font-bold text-white mb-4 text-lg">Soluções</h4>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <a href="#sistema" className="text-[hsl(var(--text-secondary))] hover:text-[hsl(var(--f5-orange))] transition-colors">
+                  Sistema F5
+                </a>
+              </li>
+              <li>
+                <a href="#resultados" className="text-[hsl(var(--text-secondary))] hover:text-[hsl(var(--f5-orange))] transition-colors">
+                  Cases de Sucesso
+                </a>
+              </li>
+              <li>
+                <a href="#diferenciais" className="text-[hsl(var(--text-secondary))] hover:text-[hsl(var(--f5-orange))] transition-colors">
+                  Nosso Ecossistema
+                </a>
+              </li>
             </ul>
           </div>
 
+          {/* Contact */}
           <div>
-            <h4 className="font-bold mb-4">Contato</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>contato@f5odonto.com.br</li>
-              <li>(11) 99999-9999</li>
-              <li>São Paulo - SP</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold mb-4">Redes Sociais</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">Instagram</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Facebook</a></li>
+            <h4 className="font-bold text-white mb-4 text-lg">Contato</h4>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-center gap-2 text-[hsl(var(--text-secondary))]">
+                <Phone className="w-4 h-4 text-[hsl(var(--f5-orange))]" />
+                <span>(11) 99999-9999</span>
+              </li>
+              <li className="flex items-center gap-2 text-[hsl(var(--text-secondary))]">
+                <Mail className="w-4 h-4 text-[hsl(var(--f5-orange))]" />
+                <span>contato@f5estrategia.com</span>
+              </li>
+              <li className="flex items-center gap-2 text-[hsl(var(--text-secondary))]">
+                <MapPin className="w-4 h-4 text-[hsl(var(--f5-orange))]" />
+                <span>São Paulo, SP</span>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-          <p>© 2024 F5 Odonto. Todos os direitos reservados.</p>
+        {/* Bottom */}
+        <div className="border-t border-white/8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-[hsl(var(--text-muted))] text-center md:text-left">
+            © 2024 F5 Estratégia. Todos os direitos reservados.
+          </p>
+          <div className="flex gap-6 text-sm">
+            <a href="#" className="text-[hsl(var(--text-muted))] hover:text-[hsl(var(--f5-orange))] transition-colors">
+              Política de Privacidade
+            </a>
+            <a href="#" className="text-[hsl(var(--text-muted))] hover:text-[hsl(var(--f5-orange))] transition-colors">
+              Termos de Uso
+            </a>
+          </div>
         </div>
       </div>
     </footer>
