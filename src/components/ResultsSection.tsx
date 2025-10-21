@@ -69,12 +69,12 @@ const ResultsSection = () => {
             </div>
           </div>
 
-          {/* #2 - ORAL UNIC NATAL */}
+          {/* #2 - ORAL UNIC VILA MARIANA */}
           <div className="bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--f5-orange))]/5 border border-[hsl(var(--f5-orange))] rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
             <div className="relative h-48 bg-[hsl(var(--luxury-gray))] overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop"
-                alt="Oral Unic Natal"
+                alt="Oral Unic Vila Mariana"
                 className="w-full h-full object-cover opacity-70 hover:scale-110 hover:opacity-90 transition-all duration-500"
               />
               <div className="absolute top-4 right-4 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
@@ -83,32 +83,32 @@ const ResultsSection = () => {
             </div>
 
             <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-4">ORAL UNIC NATAL</h3>
+              <h3 className="text-xl font-bold text-white mb-4">ORAL UNIC VILA MARIANA</h3>
               
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div className="text-center p-3 bg-white/5 rounded-lg">
-                  <span className="block text-xs text-[hsl(var(--text-muted))] uppercase mb-1">Investimento</span>
-                  <span className="block text-sm font-bold text-white">R$ 42.000</span>
+                  <span className="block text-xs text-[hsl(var(--text-muted))] uppercase mb-1">Vendas</span>
+                  <span className="block text-sm font-bold text-[hsl(var(--f5-orange))]">R$ 2 MI+</span>
                 </div>
                 <div className="text-center p-3 bg-white/5 rounded-lg">
-                  <span className="block text-xs text-[hsl(var(--text-muted))] uppercase mb-1">Faturamento</span>
-                  <span className="block text-sm font-bold text-[hsl(var(--f5-orange))]">R$ 800.000+</span>
+                  <span className="block text-xs text-[hsl(var(--text-muted))] uppercase mb-1">Período</span>
+                  <span className="block text-sm font-bold text-white">14 meses</span>
                 </div>
               </div>
 
               <p className="text-[hsl(var(--text-secondary))] mb-2 leading-relaxed">
-                R$42 mil se transformaram em <strong className="text-white">R$800 mil</strong>. Crescimento previsível mês após mês durante 1 ano.
+                Mais de <strong className="text-white">R$2 milhões em vendas</strong> em 14 meses. Crescimento consistente e escalável.
               </p>
-              <div className="text-xs text-[hsl(var(--text-muted))]">Período: 12 meses</div>
+              <div className="text-xs text-[hsl(var(--text-muted))]">Ticket médio: R$12.500 | Comparecimento: 80%</div>
             </div>
           </div>
 
-          {/* #3 - ORAL UNIC IBIRAMA */}
+          {/* #3 - ORAL UNIC JOÃO PESSOA */}
           <div className="bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--f5-orange))]/5 border border-[hsl(var(--f5-orange))] rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
             <div className="relative h-48 bg-[hsl(var(--luxury-gray))] overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop"
-                alt="Oral Unic Ibirama"
+                alt="Oral Unic João Pessoa"
                 className="w-full h-full object-cover opacity-70 hover:scale-110 hover:opacity-90 transition-all duration-500"
               />
               <div className="absolute top-4 right-4 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
@@ -117,89 +117,154 @@ const ResultsSection = () => {
             </div>
 
             <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-4">ORAL UNIC IBIRAMA</h3>
+              <h3 className="text-xl font-bold text-white mb-4">ORAL UNIC JOÃO PESSOA</h3>
               
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div className="text-center p-3 bg-white/5 rounded-lg">
-                  <span className="block text-xs text-[hsl(var(--text-muted))] uppercase mb-1">ROAS</span>
-                  <span className="block text-lg font-bold text-[hsl(var(--f5-orange))]">64,65x</span>
+                  <span className="block text-xs text-[hsl(var(--text-muted))] uppercase mb-1">Vendas</span>
+                  <span className="block text-sm font-bold text-[hsl(var(--f5-orange))]">R$ 820 mil</span>
                 </div>
                 <div className="text-center p-3 bg-white/5 rounded-lg">
-                  <span className="block text-xs text-[hsl(var(--text-muted))] uppercase mb-1">Vendas</span>
-                  <span className="block text-sm font-bold text-white">52 em 1 mês</span>
+                  <span className="block text-xs text-[hsl(var(--text-muted))] uppercase mb-1">ROAS</span>
+                  <span className="block text-lg font-bold text-[hsl(var(--f5-orange))]">27x</span>
                 </div>
               </div>
 
               <p className="text-[hsl(var(--text-secondary))] mb-2 leading-relaxed">
-                <strong className="text-white">52 vendas em 30 dias</strong>. De R$5.386 para R$352 mil. O sistema que transforma leads em fechamentos.
+                <strong className="text-white">R$820 mil efetivados</strong> com ROAS de 27x. Taxa de conversão de 43% com CPL de apenas R$18,34.
               </p>
-              <div className="text-xs text-[hsl(var(--text-muted))]">Ticket médio: R$6.774</div>
+              <div className="text-xs text-[hsl(var(--text-muted))]">Período: 8 meses</div>
             </div>
           </div>
         </div>
 
         {/* TIER 2 - CASES DE APOIO */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {/* #4 - ODONTO EXCELLENCE CAMPECHE */}
+          {/* #4 - ORAL UNIC NATAL */}
           <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
             <div className="p-6">
-              <h4 className="text-lg font-bold text-white mb-3">ODONTO EXCELLENCE CAMPECHE</h4>
+              <h4 className="text-lg font-bold text-white mb-3">ORAL UNIC NATAL</h4>
               
               <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
-                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">ROI</span>
-                <span className="text-2xl font-extrabold text-white">150x</span>
+                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">Vendas</span>
+                <span className="text-2xl font-extrabold text-white">R$ 800k+</span>
               </div>
 
               <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
-                R$240 viraram <strong className="text-white">R$36 mil em 10 dias</strong>. ROI de 150x em harmonização facial.
+                R$42 mil se transformaram em <strong className="text-white">R$800 mil</strong>. Crescimento previsível mês após mês.
+              </p>
+              <div className="text-xs text-[hsl(var(--text-muted))]">Período: 12 meses</div>
+            </div>
+          </div>
+
+          {/* #5 - ORAL UNIC IBIRAMA */}
+          <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+            <div className="p-6">
+              <h4 className="text-lg font-bold text-white mb-3">ORAL UNIC IBIRAMA</h4>
+              
+              <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
+                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">ROAS</span>
+                <span className="text-2xl font-extrabold text-white">64,65x</span>
+              </div>
+
+              <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
+                <strong className="text-white">52 vendas em 30 dias</strong>. R$352 mil faturados. Ticket médio de R$6.774.
               </p>
             </div>
           </div>
 
-          {/* #5 - ORAL UNIC BLUMENAU */}
+          {/* #6 - ORAL UNIC PRESIDENTE PRUDENTE */}
           <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
             <div className="p-6">
-              <h4 className="text-lg font-bold text-white mb-3">ORAL UNIC BLUMENAU</h4>
+              <h4 className="text-lg font-bold text-white mb-3">ORAL UNIC PRES. PRUDENTE</h4>
               
               <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
                 <span className="text-sm font-semibold text-white uppercase tracking-[2px]">ROAS</span>
-                <span className="text-2xl font-extrabold text-white">30,25x</span>
+                <span className="text-2xl font-extrabold text-white">28x</span>
               </div>
 
               <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
-                R$11 mil investidos. <strong className="text-white">R$345 mil faturados</strong>. Sistema CHAVI em implantes de alto ticket.
+                <strong className="text-white">R$93.100 efetivados</strong> em apenas 18 dias. Velocidade e conversão.
               </p>
             </div>
           </div>
 
-          {/* #6 - ORAL UNIC GUARATINGUETÁ */}
+          {/* #7 - INNOVARE SORRISOS */}
           <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
             <div className="p-6">
-              <h4 className="text-lg font-bold text-white mb-3">ORAL UNIC GUARATINGUETÁ</h4>
+              <h4 className="text-lg font-bold text-white mb-3">INNOVARE SORRISOS</h4>
               
               <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
-                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">ROAS</span>
-                <span className="text-2xl font-extrabold text-white">25,42x</span>
+                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">Vendas</span>
+                <span className="text-2xl font-extrabold text-white">R$ 105k</span>
               </div>
 
               <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
-                <strong className="text-white">1.214 leads qualificados</strong> geraram R$313 mil em 30 dias. Tráfego que converte.
+                Mais de <strong className="text-white">R$105 mil em vendas</strong> em 30 dias. Crescimento acelerado.
               </p>
             </div>
           </div>
 
-          {/* #7 - CENTRO DO SORRISO ARAPONGAS */}
+          {/* #8 - CLINIC DENTE */}
           <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
             <div className="p-6">
-              <h4 className="text-lg font-bold text-white mb-3">CENTRO DO SORRISO ARAPONGAS</h4>
+              <h4 className="text-lg font-bold text-white mb-3">CLINIC DENTE</h4>
               
               <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
-                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">ROAS</span>
-                <span className="text-2xl font-extrabold text-white">39x</span>
+                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">Vendas</span>
+                <span className="text-2xl font-extrabold text-white">R$ 103k</span>
               </div>
 
               <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
-                <strong className="text-white">R$48 mil em vendas em 10 dias</strong>. Campanha relâmpago para plantão odontológico.
+                <strong className="text-white">R$103.160 em vendas</strong> com tráfego pago em apenas 1 mês.
+              </p>
+            </div>
+          </div>
+
+          {/* #9 - SERIDÓ MED */}
+          <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+            <div className="p-6">
+              <h4 className="text-lg font-bold text-white mb-3">SERIDÓ MED</h4>
+              
+              <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
+                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">Receita</span>
+                <span className="text-2xl font-extrabold text-white">R$ 100k</span>
+              </div>
+
+              <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
+                <strong className="text-white">R$100 mil em receita</strong> com investimento de apenas R$3.256 em 1 mês.
+              </p>
+            </div>
+          </div>
+
+          {/* #10 - ODONTO EXCELLENCE */}
+          <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+            <div className="p-6">
+              <h4 className="text-lg font-bold text-white mb-3">ODONTO EXCELLENCE</h4>
+              
+              <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
+                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">CPL</span>
+                <span className="text-2xl font-extrabold text-white">R$ 24</span>
+              </div>
+
+              <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
+                CPL reduzido de <strong className="text-white">R$150 para R$24</strong> em menos de 30 dias.
+              </p>
+            </div>
+          </div>
+
+          {/* #11 - ORAL UNIC SERTÃOZINHO */}
+          <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+            <div className="p-6">
+              <h4 className="text-lg font-bold text-white mb-3">ORAL UNIC SERTÃOZINHO</h4>
+              
+              <div className="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl mb-4">
+                <span className="text-sm font-semibold text-white uppercase tracking-[2px]">CPL</span>
+                <span className="text-2xl font-extrabold text-white">R$ 5,54</span>
+              </div>
+
+              <p className="text-[hsl(var(--text-secondary))] text-sm mb-3 leading-relaxed">
+                CPL reduzido de <strong className="text-white">R$65 para R$5,54</strong> em menos de 24h.
               </p>
             </div>
           </div>
