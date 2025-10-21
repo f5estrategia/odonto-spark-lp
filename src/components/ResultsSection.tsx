@@ -207,52 +207,67 @@ const ResultsSection = () => {
 
         {/* Testimonials Section */}
         <div className="mt-16">
-          <h3 className="text-3xl font-bold text-center text-white mb-12">
-            Ouça de quem já transformou sua clínica
-          </h3>
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Não é Sobre Nós. É Sobre Quem Confia em Nós.
+            </h3>
+            <p className="text-lg text-[hsl(var(--text-secondary))] max-w-2xl mx-auto">
+              Veja o que os donos de clínicas que já transformaram seus resultados têm a dizer
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* Testimonial 1 */}
-            <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-              <div className="relative h-48 bg-[hsl(var(--luxury-gray))] overflow-hidden group">
-                <img
-                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=400&fit=crop"
-                  alt="Dr. Fernando Carvalhaes"
-                  className="w-full h-full object-cover opacity-80"
-                />
-                <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-[0_5px_20px_hsl(var(--f5-orange)/0.4)]">
-                  <PlayCircle className="w-8 h-8 text-white" />
-                </button>
-              </div>
-
-              <div className="p-6">
-                <h4 className="text-lg font-bold text-white mb-1">Dr. Fernando Carvalhaes</h4>
-                <p className="text-sm text-[hsl(var(--f5-orange))] mb-4">Cofundador - Oral Unic Odontologia</p>
-                <blockquote className="text-[hsl(var(--text-secondary))] italic border-l-2 border-[hsl(var(--f5-orange))] pl-4">
-                  "O Google Ads é um recurso inestimável para impulsionar as vendas. A F5 transformou nossa clínica em referência regional."
-                </blockquote>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {/* Testimonial 1 - Vertical Video */}
+            <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+              <div className="relative aspect-[9/16] bg-[hsl(var(--luxury-gray))] overflow-hidden group">
+                <video 
+                  className="w-full h-full object-cover"
+                  poster="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=700&fit=crop"
+                  controls
+                >
+                  <source src="/videos/depoimento-1.mp4" type="video/mp4" />
+                  Seu navegador não suporta vídeos.
+                </video>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                  <h4 className="text-base font-bold text-white mb-1">Dr. Fernando Carvalhaes</h4>
+                  <p className="text-xs text-[hsl(var(--f5-orange))]">Oral Unic Odontologia</p>
+                </div>
               </div>
             </div>
 
-            {/* Testimonial 2 */}
-            <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-              <div className="relative h-48 bg-[hsl(var(--luxury-gray))] overflow-hidden group">
-                <img
-                  src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&h=400&fit=crop"
-                  alt="Dra. Maria Silva"
-                  className="w-full h-full object-cover opacity-80"
-                />
-                <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-[0_5px_20px_hsl(var(--f5-orange)/0.4)]">
-                  <PlayCircle className="w-8 h-8 text-white" />
-                </button>
+            {/* Testimonial 2 - Vertical Video */}
+            <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+              <div className="relative aspect-[9/16] bg-[hsl(var(--luxury-gray))] overflow-hidden group">
+                <video 
+                  className="w-full h-full object-cover"
+                  poster="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=700&fit=crop"
+                  controls
+                >
+                  <source src="/videos/depoimento-2.mp4" type="video/mp4" />
+                  Seu navegador não suporta vídeos.
+                </video>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                  <h4 className="text-base font-bold text-white mb-1">Dra. Ana Paula</h4>
+                  <p className="text-xs text-[hsl(var(--f5-orange))]">Clínica Premium</p>
+                </div>
               </div>
+            </div>
 
-              <div className="p-6">
-                <h4 className="text-lg font-bold text-white mb-1">Dra. Maria Silva</h4>
-                <p className="text-sm text-[hsl(var(--f5-orange))] mb-4">CEO - Clínica Estética Premium</p>
-                <blockquote className="text-[hsl(var(--text-secondary))] italic border-l-2 border-[hsl(var(--f5-orange))] pl-4">
-                  "Em 6 meses, triplicamos o número de procedimentos de alto valor. O sistema F5 realmente funciona."
-                </blockquote>
+            {/* Testimonial 3 - Vertical Video */}
+            <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+              <div className="relative aspect-[9/16] bg-[hsl(var(--luxury-gray))] overflow-hidden group">
+                <video 
+                  className="w-full h-full object-cover"
+                  poster="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=700&fit=crop"
+                  controls
+                >
+                  <source src="/videos/depoimento-3.mp4" type="video/mp4" />
+                  Seu navegador não suporta vídeos.
+                </video>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                  <h4 className="text-base font-bold text-white mb-1">Dr. Carlos Santos</h4>
+                  <p className="text-xs text-[hsl(var(--f5-orange))]">Viva Odontologia</p>
+                </div>
               </div>
             </div>
           </div>
