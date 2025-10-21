@@ -338,11 +338,11 @@ const ResultsSection = () => {
           </div>
 
           {/* Carousel Container */}
-          <div className="relative max-w-5xl mx-auto px-4">
+          <div className="relative max-w-5xl mx-auto px-4 md:px-8">
             <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex gap-4">
+              <div className="flex gap-3 md:gap-4">
                 {/* Video 1 */}
-                <div className="flex-[0_0_calc(33.333%-12px)] min-w-0">
+                <div className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-12px)] min-w-0">
                   <div id="ifr_68f7e3478ea58bfe7173c5b5_wrapper" className="w-full">
                     <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7e3478ea58bfe7173c5b5_aspect">
                       <iframe 
@@ -364,7 +364,7 @@ const ResultsSection = () => {
                 </div>
 
                 {/* Video 2 */}
-                <div className="flex-[0_0_calc(33.333%-12px)] min-w-0">
+                <div className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-12px)] min-w-0">
                   <div id="ifr_68f7dee38ea58bfe7173c072_wrapper" className="w-full">
                     <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7dee38ea58bfe7173c072_aspect">
                       <iframe 
@@ -386,7 +386,7 @@ const ResultsSection = () => {
                 </div>
 
                 {/* Video 3 */}
-                <div className="flex-[0_0_calc(33.333%-12px)] min-w-0">
+                <div className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-12px)] min-w-0">
                   <div id="ifr_68f7d9cbc9a120c812a9e6a7_wrapper" className="w-full">
                     <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7d9cbc9a120c812a9e6a7_aspect">
                       <iframe 
@@ -408,7 +408,7 @@ const ResultsSection = () => {
                 </div>
 
                 {/* Video 4 */}
-                <div className="flex-[0_0_calc(33.333%-12px)] min-w-0">
+                <div className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-12px)] min-w-0">
                   <div id="ifr_68f7d9ef21b0a6afaf4cc36c_wrapper" className="w-full">
                     <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7d9ef21b0a6afaf4cc36c_aspect">
                       <iframe 
@@ -430,7 +430,7 @@ const ResultsSection = () => {
                 </div>
 
                 {/* Video 5 */}
-                <div className="flex-[0_0_calc(33.333%-12px)] min-w-0">
+                <div className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-12px)] min-w-0">
                   <div id="ifr_68f7df118ea58bfe7173c0b0_wrapper" className="w-full">
                     <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7df118ea58bfe7173c0b0_aspect">
                       <iframe 
@@ -452,7 +452,7 @@ const ResultsSection = () => {
                 </div>
 
                 {/* Video 6 */}
-                <div className="flex-[0_0_calc(33.333%-12px)] min-w-0">
+                <div className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-12px)] min-w-0">
                   <div id="ifr_68f7ebffa1ac75e611ca004b_wrapper" className="w-full">
                     <div style={{ position: 'relative', padding: '56.25% 0 0 0' }} id="ifr_68f7ebffa1ac75e611ca004b_aspect">
                       <iframe 
@@ -478,17 +478,17 @@ const ResultsSection = () => {
             {/* Navigation Buttons */}
             <button
               onClick={scrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-[hsl(var(--f5-orange))] hover:bg-[hsl(var(--f5-orange-dark))] text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              className="absolute left-0 md:left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 w-10 h-10 md:w-12 md:h-12 rounded-full bg-[hsl(var(--f5-orange))] hover:bg-[hsl(var(--f5-orange-dark))] text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
               aria-label="Anterior"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
             <button
               onClick={scrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-[hsl(var(--f5-orange))] hover:bg-[hsl(var(--f5-orange-dark))] text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              className="absolute right-0 md:right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 w-10 h-10 md:w-12 md:h-12 rounded-full bg-[hsl(var(--f5-orange))] hover:bg-[hsl(var(--f5-orange-dark))] text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
               aria-label="Próximo"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
         </div>
