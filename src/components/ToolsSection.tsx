@@ -71,11 +71,11 @@ const ToolsSection = () => {
                 className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] rounded-2xl p-8 border border-white/10 hover:border-[hsl(var(--f5-orange))]/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,94,0,0.15)]"
               >
                 {/* Icon */}
-                <div className="mb-6 relative flex items-center justify-start">
+                <div className="mb-6 relative flex items-center justify-start h-16">
                   {tool.icon === "google" ? (
-                    <img src={googleAdsIcon} alt="Google Ads" className="h-16 w-auto object-contain" />
+                    <img src={googleAdsIcon} alt="Google Ads" className="h-12 w-auto object-contain" />
                   ) : tool.icon === "meta" ? (
-                    <img src={metaIcon} alt="Meta" className="h-14 w-auto object-contain" />
+                    <img src={metaIcon} alt="Meta" className="h-12 w-auto object-contain" />
                   ) : tool.icon === "rd" ? (
                     <img src={rdStationIcon} alt="RD Station" className="h-12 w-auto object-contain" />
                   ) : null}
