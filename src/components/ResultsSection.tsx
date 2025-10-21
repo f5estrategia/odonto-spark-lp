@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, PlayCircle } from "lucide-react";
+import { useEffect } from "react";
 
 const ResultsSection = () => {
   const scrollToForm = () => {
@@ -10,6 +11,34 @@ const ResultsSection = () => {
       window.scrollTo({ top: targetPosition, behavior: "smooth" });
     }
   };
+
+  useEffect(() => {
+    // Load vturb scripts
+    const scripts = [
+      'https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7e3478ea58bfe7173c5b5/v4/player.js',
+      'https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7df118ea58bfe7173c0b0/v4/player.js',
+      'https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7dee38ea58bfe7173c072/v4/player.js',
+      'https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7d9ef21b0a6afaf4cc36c/v4/player.js',
+      'https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7d9cbc9a120c812a9e6a7/v4/player.js'
+    ];
+
+    scripts.forEach(src => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      document.head.appendChild(script);
+    });
+
+    return () => {
+      // Cleanup scripts on unmount
+      scripts.forEach(src => {
+        const script = document.querySelector(`script[src="${src}"]`);
+        if (script) {
+          document.head.removeChild(script);
+        }
+      });
+    };
+  }, []);
 
   return (
     <section id="resultados" className="py-24 bg-[hsl(var(--luxury-black))] relative">
@@ -305,59 +334,45 @@ const ResultsSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {/* Testimonial 1 - Vertical Video */}
-            <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-              <div className="relative aspect-[9/16] bg-[hsl(var(--luxury-gray))] overflow-hidden group">
-                <video 
-                  className="w-full h-full object-cover"
-                  poster="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=700&fit=crop"
-                  controls
-                >
-                  <source src="/videos/depoimento-1.mp4" type="video/mp4" />
-                  Seu navegador não suporta vídeos.
-                </video>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <h4 className="text-base font-bold text-white mb-1">Dr. Fernando Carvalhaes</h4>
-                  <p className="text-xs text-[hsl(var(--f5-orange))]">Oral Unic Odontologia</p>
-                </div>
-              </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto">
+            {/* Video 1 */}
+            <div className="flex justify-center">
+              <div 
+                id="vid-68f7e3478ea58bfe7173c5b5" 
+                style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}
+              />
             </div>
 
-            {/* Testimonial 2 - Vertical Video */}
-            <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-              <div className="relative aspect-[9/16] bg-[hsl(var(--luxury-gray))] overflow-hidden group">
-                <video 
-                  className="w-full h-full object-cover"
-                  poster="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=700&fit=crop"
-                  controls
-                >
-                  <source src="/videos/depoimento-2.mp4" type="video/mp4" />
-                  Seu navegador não suporta vídeos.
-                </video>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <h4 className="text-base font-bold text-white mb-1">Dra. Ana Paula</h4>
-                  <p className="text-xs text-[hsl(var(--f5-orange))]">Clínica Premium</p>
-                </div>
-              </div>
+            {/* Video 2 */}
+            <div className="flex justify-center">
+              <div 
+                id="vid-68f7df118ea58bfe7173c0b0" 
+                style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}
+              />
             </div>
 
-            {/* Testimonial 3 - Vertical Video */}
-            <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-              <div className="relative aspect-[9/16] bg-[hsl(var(--luxury-gray))] overflow-hidden group">
-                <video 
-                  className="w-full h-full object-cover"
-                  poster="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=700&fit=crop"
-                  controls
-                >
-                  <source src="/videos/depoimento-3.mp4" type="video/mp4" />
-                  Seu navegador não suporta vídeos.
-                </video>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <h4 className="text-base font-bold text-white mb-1">Dr. Carlos Santos</h4>
-                  <p className="text-xs text-[hsl(var(--f5-orange))]">Viva Odontologia</p>
-                </div>
-              </div>
+            {/* Video 3 */}
+            <div className="flex justify-center">
+              <div 
+                id="vid-68f7dee38ea58bfe7173c072" 
+                style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}
+              />
+            </div>
+
+            {/* Video 4 */}
+            <div className="flex justify-center">
+              <div 
+                id="vid-68f7d9ef21b0a6afaf4cc36c" 
+                style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}
+              />
+            </div>
+
+            {/* Video 5 */}
+            <div className="flex justify-center">
+              <div 
+                id="vid-68f7d9cbc9a120c812a9e6a7" 
+                style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}
+              />
             </div>
           </div>
         </div>
