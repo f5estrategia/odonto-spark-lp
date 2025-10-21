@@ -2,9 +2,17 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
 import googlePartnerBadge from "@/assets/google-partner-badge.png";
 import metaPartnerBadge from "@/assets/meta-partner-badge.png";
 import rdPartnerBadge from "@/assets/rd-partner-badge.png";
+
+const formSchema = z.object({
+  nome: z.string().trim().min(2, "Nome muito curto").max(100, "Nome muito longo"),
+  email: z.string().trim().email("Email inválido").max(255, "Email muito longo"),
+  telefone: z.string().trim().min(10, "Telefone inválido").max(20, "Telefone muito longo"),
+  clinica: z.string().trim().min(2, "Nome da clínica muito curto").max(100, "Nome da clínica muito longo"),
+});
 
 const FinalCTA = () => {
   const [formData, setFormData] = useState({
@@ -20,16 +28,46 @@ const FinalCTA = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      // Validar dados
+      const validatedData = formSchema.parse(formData);
 
-    toast({
-      title: "Recebemos seu contato!",
-      description: "Nossa equipe entrará em contato em até 2 horas úteis.",
-    });
+      // Enviar para Google Sheets
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzOKYGKSffzLUpbIpNdxDeeBvWLBotZSkH1fZNtKyLSssOj0VFNs9XemtabtEl-srvVyQ/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(validatedData),
+        }
+      );
 
-    setFormData({ nome: "", email: "", telefone: "", clinica: "" });
-    setIsSubmitting(false);
+      toast({
+        title: "Recebemos seu contato!",
+        description: "Nossa equipe entrará em contato em até 2 horas úteis.",
+      });
+
+      setFormData({ nome: "", email: "", telefone: "", clinica: "" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Erro de validação",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Erro ao enviar",
+          description: "Tente novamente em alguns instantes.",
+          variant: "destructive",
+        });
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
