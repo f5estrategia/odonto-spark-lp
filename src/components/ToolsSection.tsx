@@ -1,6 +1,6 @@
-import { RefreshCw } from "lucide-react";
 import googleAdsIcon from "@/assets/google-ads-icon.png";
 import metaIcon from "@/assets/meta-icon.png";
+import rdStationIcon from "@/assets/rd-station-icon.png";
 
 const ToolsSection = () => {
   const tools = [
@@ -31,7 +31,7 @@ const ToolsSection = () => {
       ]
     },
     {
-      icon: RefreshCw,
+      icon: "rd",
       platform: "CRM & Funil",
       title: "Novo funil para vendas saudáveis",
       description: "Sistema completo de gestão e recompra de pacientes",
@@ -71,16 +71,14 @@ const ToolsSection = () => {
                 className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] rounded-2xl p-8 border border-white/10 hover:border-[hsl(var(--f5-orange))]/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,94,0,0.15)]"
               >
                 {/* Icon */}
-                <div className="mb-6 relative">
-                  <div className="w-16 h-16 rounded-xl bg-[hsl(var(--f5-orange))]/10 border border-[hsl(var(--f5-orange))]/30 flex items-center justify-center group-hover:bg-[hsl(var(--f5-orange))]/20 transition-all duration-300">
-                    {tool.icon === "google" ? (
-                      <img src={googleAdsIcon} alt="Google Ads" className="w-10 h-10 object-contain" />
-                    ) : tool.icon === "meta" ? (
-                      <img src={metaIcon} alt="Meta" className="w-8 h-8 object-contain" />
-                    ) : (
-                      <tool.icon className="w-8 h-8 text-[hsl(var(--f5-orange))]" />
-                    )}
-                  </div>
+                <div className="mb-6 relative flex items-center justify-start">
+                  {tool.icon === "google" ? (
+                    <img src={googleAdsIcon} alt="Google Ads" className="h-16 w-auto object-contain" />
+                  ) : tool.icon === "meta" ? (
+                    <img src={metaIcon} alt="Meta" className="h-14 w-auto object-contain" />
+                  ) : tool.icon === "rd" ? (
+                    <img src={rdStationIcon} alt="RD Station" className="h-12 w-auto object-contain" />
+                  ) : null}
                 </div>
 
                 {/* Platform badge */}
