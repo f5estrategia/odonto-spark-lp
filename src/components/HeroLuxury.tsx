@@ -32,19 +32,15 @@ const HeroLuxury = () => {
           <div className="text-left lg:text-left animate-fade-in-up">
             <h1 className="mb-8">
               <span className="block text-sm md:text-base font-medium text-[hsl(var(--text-secondary))] uppercase tracking-[2px] mb-4">
-                O MAIOR ECOSSISTEMA QUE
+                A agência especializada em entregar o que sua clínica mais precisa:
               </span>
-              <span className="block text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-br from-white to-[hsl(var(--text-secondary))] bg-clip-text text-transparent mb-2">
-                Transforma Investimento
-              </span>
-              <span className="block text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] bg-clip-text text-transparent">
-                em Pacientes de Alto Valor
+              <span className="block text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] bg-clip-text text-transparent mb-4">
+                VENDER MAIS
               </span>
             </h1>
 
             <p className="text-lg md:text-xl text-[hsl(var(--text-secondary))] max-w-2xl mb-12 leading-relaxed">
-              Implementamos nosso sistema de aquisição de pacientes para clínicas de odontologia, estética e transplante capilar que precisam de uma única coisa:{" "}
-              <strong className="text-[hsl(var(--f5-orange))] font-bold">vender mais</strong>.
+              Transformamos clínicas odontológicas que faturam R$30-50k/mês em operações de R$250k+ — com sistema completo de vendas: do lead qualificado até o fechamento de alto ticket.
             </p>
 
             <Button
