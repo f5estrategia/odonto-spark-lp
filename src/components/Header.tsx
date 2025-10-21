@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
+import f5Logo from "@/assets/f5-logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,9 +53,7 @@ const Header = () => {
           <div className="flex items-center justify-between h-[100px]">
             {/* Logo */}
             <div className="flex items-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-2xl font-bold text-white">F5</span>
-              </div>
+              <img src={f5Logo} alt="F5 Logo" className="h-14 w-auto" />
             </div>
 
             {/* Desktop Navigation */}

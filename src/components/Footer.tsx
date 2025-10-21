@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import f5Logo from "@/assets/f5-logo.png";
 
 const Footer = () => {
   return (
@@ -8,9 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-xl flex items-center justify-center">
-                <span className="text-xl font-bold text-white">F5</span>
-              </div>
+              <img src={f5Logo} alt="F5 Logo" className="h-12 w-auto" />
               <span className="text-xl font-bold text-white">Estratégia</span>
             </div>
             <p className="text-sm text-[hsl(var(--text-secondary))] leading-relaxed">
