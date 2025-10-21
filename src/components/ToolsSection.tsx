@@ -73,7 +73,7 @@ const ToolsSection = () => {
                 {/* Icon */}
                 <div className="mb-6 relative flex items-center justify-start h-16">
                   {tool.icon === "google" ? (
-                    <img src={googleAdsIcon} alt="Google Ads" className="h-12 w-auto object-contain" />
+                    <img src={googleAdsIcon} alt="Google Ads" className="h-14 w-auto object-contain" />
                   ) : tool.icon === "meta" ? (
                     <img src={metaIcon} alt="Meta" className="h-12 w-auto object-contain" />
                   ) : tool.icon === "rd" ? (
