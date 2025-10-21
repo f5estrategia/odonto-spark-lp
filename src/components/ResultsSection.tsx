@@ -1,8 +1,23 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, PlayCircle } from "lucide-react";
-import { useEffect } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 
 const ResultsSection = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true,
+    align: 'start',
+    slidesToScroll: 1
+  });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
   const scrollToForm = () => {
     const formSection = document.getElementById("contato");
     if (formSection) {
@@ -322,138 +337,159 @@ const ResultsSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto">
-            {/* Video 1 */}
-            <div className="flex justify-center">
-              <div id="ifr_68f7e3478ea58bfe7173c5b5_wrapper" style={{ margin: '0 auto', width: '100%', maxWidth: '400px' }}>
-                <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7e3478ea58bfe7173c5b5_aspect">
-                  <iframe 
-                    frameBorder="0" 
-                    allowFullScreen 
-                    src="about:blank" 
-                    id="ifr_68f7e3478ea58bfe7173c5b5" 
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
-                    referrerPolicy="origin" 
-                    onLoad={(e) => {
-                      const iframe = e.target as HTMLIFrameElement;
-                      if (iframe.src === 'about:blank') {
-                        iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7e3478ea58bfe7173c5b5/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
-                      }
-                    }}
-                  />
+          {/* Carousel Container */}
+          <div className="relative max-w-5xl mx-auto px-4">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex gap-4">
+                {/* Video 1 */}
+                <div className="flex-[0_0_calc(33.333%-12px)] min-w-0">
+                  <div id="ifr_68f7e3478ea58bfe7173c5b5_wrapper" className="w-full">
+                    <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7e3478ea58bfe7173c5b5_aspect">
+                      <iframe 
+                        frameBorder="0" 
+                        allowFullScreen 
+                        src="about:blank" 
+                        id="ifr_68f7e3478ea58bfe7173c5b5" 
+                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
+                        referrerPolicy="origin" 
+                        onLoad={(e) => {
+                          const iframe = e.target as HTMLIFrameElement;
+                          if (iframe.src === 'about:blank') {
+                            iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7e3478ea58bfe7173c5b5/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
+                          }
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Video 2 */}
+                <div className="flex-[0_0_calc(33.333%-12px)] min-w-0">
+                  <div id="ifr_68f7dee38ea58bfe7173c072_wrapper" className="w-full">
+                    <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7dee38ea58bfe7173c072_aspect">
+                      <iframe 
+                        frameBorder="0" 
+                        allowFullScreen 
+                        src="about:blank" 
+                        id="ifr_68f7dee38ea58bfe7173c072" 
+                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
+                        referrerPolicy="origin" 
+                        onLoad={(e) => {
+                          const iframe = e.target as HTMLIFrameElement;
+                          if (iframe.src === 'about:blank') {
+                            iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7dee38ea58bfe7173c072/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
+                          }
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Video 3 */}
+                <div className="flex-[0_0_calc(33.333%-12px)] min-w-0">
+                  <div id="ifr_68f7d9cbc9a120c812a9e6a7_wrapper" className="w-full">
+                    <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7d9cbc9a120c812a9e6a7_aspect">
+                      <iframe 
+                        frameBorder="0" 
+                        allowFullScreen 
+                        src="about:blank" 
+                        id="ifr_68f7d9cbc9a120c812a9e6a7" 
+                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
+                        referrerPolicy="origin" 
+                        onLoad={(e) => {
+                          const iframe = e.target as HTMLIFrameElement;
+                          if (iframe.src === 'about:blank') {
+                            iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7d9cbc9a120c812a9e6a7/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
+                          }
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Video 4 */}
+                <div className="flex-[0_0_calc(33.333%-12px)] min-w-0">
+                  <div id="ifr_68f7d9ef21b0a6afaf4cc36c_wrapper" className="w-full">
+                    <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7d9ef21b0a6afaf4cc36c_aspect">
+                      <iframe 
+                        frameBorder="0" 
+                        allowFullScreen 
+                        src="about:blank" 
+                        id="ifr_68f7d9ef21b0a6afaf4cc36c" 
+                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
+                        referrerPolicy="origin" 
+                        onLoad={(e) => {
+                          const iframe = e.target as HTMLIFrameElement;
+                          if (iframe.src === 'about:blank') {
+                            iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7d9ef21b0a6afaf4cc36c/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
+                          }
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Video 5 */}
+                <div className="flex-[0_0_calc(33.333%-12px)] min-w-0">
+                  <div id="ifr_68f7df118ea58bfe7173c0b0_wrapper" className="w-full">
+                    <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7df118ea58bfe7173c0b0_aspect">
+                      <iframe 
+                        frameBorder="0" 
+                        allowFullScreen 
+                        src="about:blank" 
+                        id="ifr_68f7df118ea58bfe7173c0b0" 
+                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
+                        referrerPolicy="origin" 
+                        onLoad={(e) => {
+                          const iframe = e.target as HTMLIFrameElement;
+                          if (iframe.src === 'about:blank') {
+                            iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7df118ea58bfe7173c0b0/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
+                          }
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Video 6 */}
+                <div className="flex-[0_0_calc(33.333%-12px)] min-w-0">
+                  <div id="ifr_68f7ebffa1ac75e611ca004b_wrapper" className="w-full">
+                    <div style={{ position: 'relative', padding: '56.25% 0 0 0' }} id="ifr_68f7ebffa1ac75e611ca004b_aspect">
+                      <iframe 
+                        frameBorder="0" 
+                        allowFullScreen 
+                        src="about:blank" 
+                        id="ifr_68f7ebffa1ac75e611ca004b" 
+                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
+                        referrerPolicy="origin" 
+                        onLoad={(e) => {
+                          const iframe = e.target as HTMLIFrameElement;
+                          if (iframe.src === 'about:blank') {
+                            iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7ebffa1ac75e611ca004b/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
+                          }
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Video 2 */}
-            <div className="flex justify-center">
-              <div id="ifr_68f7dee38ea58bfe7173c072_wrapper" style={{ margin: '0 auto', width: '100%', maxWidth: '400px' }}>
-                <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7dee38ea58bfe7173c072_aspect">
-                  <iframe 
-                    frameBorder="0" 
-                    allowFullScreen 
-                    src="about:blank" 
-                    id="ifr_68f7dee38ea58bfe7173c072" 
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
-                    referrerPolicy="origin" 
-                    onLoad={(e) => {
-                      const iframe = e.target as HTMLIFrameElement;
-                      if (iframe.src === 'about:blank') {
-                        iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7dee38ea58bfe7173c072/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
-                      }
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Video 3 */}
-            <div className="flex justify-center">
-              <div id="ifr_68f7d9cbc9a120c812a9e6a7_wrapper" style={{ margin: '0 auto', width: '100%', maxWidth: '400px' }}>
-                <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7d9cbc9a120c812a9e6a7_aspect">
-                  <iframe 
-                    frameBorder="0" 
-                    allowFullScreen 
-                    src="about:blank" 
-                    id="ifr_68f7d9cbc9a120c812a9e6a7" 
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
-                    referrerPolicy="origin" 
-                    onLoad={(e) => {
-                      const iframe = e.target as HTMLIFrameElement;
-                      if (iframe.src === 'about:blank') {
-                        iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7d9cbc9a120c812a9e6a7/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
-                      }
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Video 4 */}
-            <div className="flex justify-center">
-              <div id="ifr_68f7d9ef21b0a6afaf4cc36c_wrapper" style={{ margin: '0 auto', width: '100%', maxWidth: '400px' }}>
-                <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7d9ef21b0a6afaf4cc36c_aspect">
-                  <iframe 
-                    frameBorder="0" 
-                    allowFullScreen 
-                    src="about:blank" 
-                    id="ifr_68f7d9ef21b0a6afaf4cc36c" 
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
-                    referrerPolicy="origin" 
-                    onLoad={(e) => {
-                      const iframe = e.target as HTMLIFrameElement;
-                      if (iframe.src === 'about:blank') {
-                        iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7d9ef21b0a6afaf4cc36c/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
-                      }
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Video 5 */}
-            <div className="flex justify-center">
-              <div id="ifr_68f7df118ea58bfe7173c0b0_wrapper" style={{ margin: '0 auto', width: '100%', maxWidth: '400px' }}>
-                <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7df118ea58bfe7173c0b0_aspect">
-                  <iframe 
-                    frameBorder="0" 
-                    allowFullScreen 
-                    src="about:blank" 
-                    id="ifr_68f7df118ea58bfe7173c0b0" 
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
-                    referrerPolicy="origin" 
-                    onLoad={(e) => {
-                      const iframe = e.target as HTMLIFrameElement;
-                      if (iframe.src === 'about:blank') {
-                        iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7df118ea58bfe7173c0b0/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
-                      }
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Video 6 */}
-            <div className="flex justify-center">
-              <div id="ifr_68f7ebffa1ac75e611ca004b_wrapper" style={{ margin: '0 auto', width: '100%', maxWidth: '400px' }}>
-                <div style={{ position: 'relative', padding: '56.25% 0 0 0' }} id="ifr_68f7ebffa1ac75e611ca004b_aspect">
-                  <iframe 
-                    frameBorder="0" 
-                    allowFullScreen 
-                    src="about:blank" 
-                    id="ifr_68f7ebffa1ac75e611ca004b" 
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
-                    referrerPolicy="origin" 
-                    onLoad={(e) => {
-                      const iframe = e.target as HTMLIFrameElement;
-                      if (iframe.src === 'about:blank') {
-                        iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7ebffa1ac75e611ca004b/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
-                      }
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
+            {/* Navigation Buttons */}
+            <button
+              onClick={scrollPrev}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-[hsl(var(--f5-orange))] hover:bg-[hsl(var(--f5-orange-dark))] text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              aria-label="Anterior"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={scrollNext}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-[hsl(var(--f5-orange))] hover:bg-[hsl(var(--f5-orange-dark))] text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              aria-label="Próximo"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
           </div>
         </div>
 
