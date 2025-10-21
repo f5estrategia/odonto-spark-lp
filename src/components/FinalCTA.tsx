@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import fernandoMachado from "@/assets/fernando-machado.png";
+import fernandoMachado from "@/assets/fernando-machado-ceo.png";
 
 const FinalCTA = () => {
   const [formData, setFormData] = useState({
@@ -62,17 +62,18 @@ const FinalCTA = () => {
             </div>
 
             {/* Fernando Machado Image */}
-            <div className="flex items-center gap-4 p-6 bg-[hsl(var(--luxury-dark))] border border-white/10 rounded-2xl">
-              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-[hsl(var(--f5-orange))] flex-shrink-0">
+            <div className="flex items-center gap-4 p-6 bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] border border-white/10 rounded-2xl shadow-xl">
+              <div className="relative w-24 h-24 rounded-full overflow-hidden border-3 border-[hsl(var(--f5-orange))] flex-shrink-0 shadow-[0_0_30px_hsl(var(--f5-orange)/0.4)]">
                 <img
                   src={fernandoMachado}
                   alt="Fernando Machado - CEO"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
               <div>
-                <p className="text-white font-bold text-lg">Fernando Machado</p>
-                <p className="text-[hsl(var(--text-secondary))] text-sm">CEO & Fundador - F5 Marketing</p>
+                <p className="text-white font-bold text-xl mb-1">Fernando Machado</p>
+                <p className="text-[hsl(var(--f5-orange))] text-sm font-semibold mb-1">CEO & Fundador</p>
+                <p className="text-[hsl(var(--text-secondary))] text-xs">F5 Marketing</p>
               </div>
             </div>
           </div>
