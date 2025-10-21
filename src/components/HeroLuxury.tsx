@@ -46,7 +46,7 @@ const HeroLuxury = () => {
         {/* Content Container */}
         <div className="max-w-6xl mx-auto">
           {/* Headline & Text - Original Copy */}
-          <div className="text-center animate-fade-in-up mb-12">
+          <div className="text-center animate-fade-in-up mb-16">
             <h1 className="mb-8">
               <span className="block text-sm md:text-base font-medium text-white uppercase tracking-[2px] mb-4">
                 A agência especializada em entregar o que sua clínica mais precisa:
@@ -56,7 +56,7 @@ const HeroLuxury = () => {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white max-w-4xl mx-auto mb-12 leading-relaxed">
+            <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
               Transformamos clínicas odontológicas que faturam <strong className="text-white font-bold">R$30-50k/mês</strong> em operações de <strong className="text-[hsl(var(--f5-orange))] font-bold">R$250k+</strong> — com sistema completo de vendas: do lead qualificado até o fechamento de alto ticket.
             </p>
           </div>
