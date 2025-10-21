@@ -1,12 +1,10 @@
-const SocialProofBar = () => {
-  const logos = [
-    "Odonto Company",
-    "Oral Unique",
-    "Odonto Top",
-    "Clínica Premium",
-    "Rede Sorriso",
-  ];
+import clinicaPremium from "@/assets/clinica-premium.png";
+import odontoCompany from "@/assets/odonto-company.png";
+import odontoTop from "@/assets/odonto-top.png";
+import oralUnique from "@/assets/oral-unique.png";
+import redeSorriso from "@/assets/rede-sorriso.png";
 
+const SocialProofBar = () => {
   return (
     <section className="relative py-16 bg-black border-t border-b border-white/8 overflow-hidden">
       {/* Shimmer effect */}
@@ -19,17 +17,12 @@ const SocialProofBar = () => {
           A confiança das maiores redes e clínicas do Brasil
         </h2>
 
-        <div className="flex justify-center items-center gap-12 md:gap-16 flex-wrap">
-          {logos.map((logo, index) => (
-            <div
-              key={index}
-              className="h-16 flex items-center justify-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-110 grayscale hover:grayscale-0"
-            >
-              <span className="text-xl md:text-2xl font-bold text-white">
-                {logo}
-              </span>
-            </div>
-          ))}
+        <div className="flex justify-center items-center gap-12 md:gap-16 lg:gap-20 flex-wrap">
+          <img src={odontoCompany} alt="Odonto Company" className="h-12 md:h-14 lg:h-16 w-auto object-contain opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-110 grayscale hover:grayscale-0" />
+          <img src={oralUnique} alt="Oral Unique" className="h-12 md:h-14 lg:h-16 w-auto object-contain opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-110 grayscale hover:grayscale-0" />
+          <img src={odontoTop} alt="Odonto Top" className="h-12 md:h-14 lg:h-16 w-auto object-contain opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-110 grayscale hover:grayscale-0" />
+          <img src={clinicaPremium} alt="Clínica Premium" className="h-12 md:h-14 lg:h-16 w-auto object-contain opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-110 grayscale hover:grayscale-0" />
+          <img src={redeSorriso} alt="Rede Sorriso" className="h-12 md:h-14 lg:h-16 w-auto object-contain opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-110 grayscale hover:grayscale-0" />
         </div>
       </div>
 
