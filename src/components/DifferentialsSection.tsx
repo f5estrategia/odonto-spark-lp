@@ -1,4 +1,5 @@
 import { Briefcase, Megaphone, DollarSign, Wrench, Video } from "lucide-react";
+import fernandoMachado from "@/assets/fernando-machado-ceo.png";
 
 const DifferentialsSection = () => {
   return (
@@ -62,11 +63,11 @@ const DifferentialsSection = () => {
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop"
+                src={fernandoMachado}
                 alt="Fernando Machado - CEO"
-                className="w-full h-auto"
+                className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--luxury-black))] via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--luxury-black))]/60 via-transparent to-transparent" />
             </div>
           </div>
 
