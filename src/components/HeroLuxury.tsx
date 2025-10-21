@@ -71,10 +71,10 @@ const HeroLuxury = () => {
               />
             </div>
 
-            {/* Floating Metrics - Desktop */}
-            <div className="hidden lg:block">
-              {/* Metric 1 */}
-              <div className="absolute top-[10%] left-[-120px] animate-float">
+            {/* Floating Metrics - All Screens */}
+            <div>
+              {/* Metric 1 - Desktop Position */}
+              <div className="hidden lg:block absolute top-[10%] left-[-120px] animate-float">
                 <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-2xl p-4 min-w-[180px] shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300">
                   <div className="text-3xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
                     +3.000
@@ -82,9 +82,19 @@ const HeroLuxury = () => {
                   <div className="text-sm text-[hsl(var(--text-secondary))]">Clínicas Atendidas</div>
                 </div>
               </div>
+              
+              {/* Metric 1 - Mobile Position */}
+              <div className="lg:hidden absolute top-[5%] left-[5%] animate-float">
+                <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-xl p-3 min-w-[110px] shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-300">
+                  <div className="text-xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
+                    +3k
+                  </div>
+                  <div className="text-[10px] text-[hsl(var(--text-secondary))] leading-tight">Clínicas</div>
+                </div>
+              </div>
 
-              {/* Metric 2 - Featured */}
-              <div className="absolute top-[40%] right-[-120px] animate-float" style={{ animationDelay: "1.5s" }}>
+              {/* Metric 2 - Featured - Desktop Position */}
+              <div className="hidden lg:block absolute top-[40%] right-[-120px] animate-float" style={{ animationDelay: "1.5s" }}>
                 <div className="backdrop-blur-md bg-white/18 border border-white/20 rounded-2xl p-4 min-w-[180px] shadow-[0_24px_80px_rgba(0,0,0,0.5),0_0_44px_hsl(var(--f5-orange)/0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300">
                   <div className="text-3xl font-extrabold bg-gradient-to-br from-[hsl(var(--f5-orange))] to-orange-300 bg-clip-text text-transparent">
                     90x
@@ -92,14 +102,34 @@ const HeroLuxury = () => {
                   <div className="text-sm text-white">ROI Recorde</div>
                 </div>
               </div>
+              
+              {/* Metric 2 - Mobile Position */}
+              <div className="lg:hidden absolute top-[5%] right-[5%] animate-float" style={{ animationDelay: "1.5s" }}>
+                <div className="backdrop-blur-md bg-white/18 border border-white/20 rounded-xl p-3 min-w-[90px] shadow-[0_0_30px_hsl(var(--f5-orange)/0.4)] hover:scale-105 transition-all duration-300">
+                  <div className="text-xl font-extrabold bg-gradient-to-br from-[hsl(var(--f5-orange))] to-orange-300 bg-clip-text text-transparent">
+                    90x
+                  </div>
+                  <div className="text-[10px] text-white leading-tight">ROI</div>
+                </div>
+              </div>
 
-              {/* Metric 3 */}
-              <div className="absolute bottom-[10%] left-[-100px] animate-float" style={{ animationDelay: "3s" }}>
+              {/* Metric 3 - Desktop Position */}
+              <div className="hidden lg:block absolute bottom-[10%] left-[-100px] animate-float" style={{ animationDelay: "3s" }}>
                 <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-2xl p-4 min-w-[180px] shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300">
                   <div className="text-3xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
                     70%
                   </div>
                   <div className="text-sm text-[hsl(var(--text-secondary))]">Especialização em Saúde</div>
+                </div>
+              </div>
+              
+              {/* Metric 3 - Mobile Position */}
+              <div className="lg:hidden absolute bottom-[8%] left-[50%] -translate-x-1/2 animate-float" style={{ animationDelay: "3s" }}>
+                <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-xl p-3 min-w-[100px] shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-300">
+                  <div className="text-xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
+                    70%
+                  </div>
+                  <div className="text-[10px] text-[hsl(var(--text-secondary))] leading-tight">Saúde</div>
                 </div>
               </div>
             </div>
@@ -117,27 +147,6 @@ const HeroLuxury = () => {
             </Button>
           </div>
 
-          {/* Metrics Grid - Mobile/Tablet */}
-          <div className="lg:hidden mt-12 grid grid-cols-3 gap-2 md:gap-4 max-w-2xl mx-auto px-4">
-            <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-xl md:rounded-2xl p-2 md:p-4 text-center">
-              <div className="text-lg md:text-2xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
-                +3k
-              </div>
-              <div className="text-[10px] md:text-xs text-[hsl(var(--text-secondary))] mt-1 leading-tight">Clínicas</div>
-            </div>
-            <div className="backdrop-blur-md bg-white/18 border border-white/20 rounded-xl md:rounded-2xl p-2 md:p-4 text-center shadow-[0_0_30px_hsl(var(--f5-orange)/0.3)]">
-              <div className="text-lg md:text-2xl font-extrabold bg-gradient-to-br from-[hsl(var(--f5-orange))] to-orange-300 bg-clip-text text-transparent">
-                90x
-              </div>
-              <div className="text-[10px] md:text-xs text-white mt-1 leading-tight">ROI</div>
-            </div>
-            <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-xl md:rounded-2xl p-2 md:p-4 text-center">
-              <div className="text-lg md:text-2xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
-                70%
-              </div>
-              <div className="text-[10px] md:text-xs text-[hsl(var(--text-secondary))] mt-1 leading-tight">Saúde</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
