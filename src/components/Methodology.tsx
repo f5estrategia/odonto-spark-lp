@@ -14,33 +14,33 @@ const Methodology = () => {
 
   const steps = [
     {
-      number: "01",
+      number: "C",
       icon: Target,
-      title: "Diagnóstico e Perfil de Paciente Ideal",
-      description: "Mapeamos seus procedimentos mais lucrativos e identificamos o perfil exato de paciente que sua clínica precisa atrair.",
+      title: "Comunicação",
+      description: "Comunicamos com o perfil exato de paciente que sua clínica precisa atrair.",
     },
     {
-      number: "02",
+      number: "H",
       icon: Award,
-      title: "Construção de Autoridade Digital",
-      description: "Posicionamos sua clínica como a referência absoluta na sua cidade através de conteúdo estratégico e presença digital dominante.",
+      title: "Humanização",
+      description: "Posicionamos sua clínica como autoridade na sua cidade através de conteúdo estratégico e presença digital dominante.",
     },
     {
-      number: "03",
+      number: "A",
       icon: Rocket,
-      title: "Motor de Aquisição de Pacientes",
-      description: "Criamos campanhas de performance multicanal para atrair pacientes de alto valor que realmente precisam dos seus serviços.",
+      title: "Anúncio",
+      description: "Criamos anúncios pagos na plataforma que seu cliente consome seus serviços.",
     },
     {
-      number: "04",
+      number: "V",
       icon: Users,
-      title: "Otimização da Conversão",
-      description: "Treinamos sua equipe com scripts comprovados para transformar cada lead em agendamento confirmado.",
+      title: "Vendas",
+      description: "Gestão estratégica e oportunidades de vendas para sua equipe para transformar cada lead em fechamento.",
     },
     {
-      number: "05",
+      number: "I",
       icon: BarChart,
-      title: "Dashboard de Performance",
+      title: "Inteligência de dados",
       description: "Você acompanha o ROI de cada real investido em tempo real, com métricas claras e acionáveis.",
     },
   ];
