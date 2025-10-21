@@ -22,7 +22,7 @@ const DifferentialsSection = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center gap-4">
             <img src={f5LogoWhite} alt="F5 Estratégia" className="h-12 w-auto drop-shadow-[0_0_20px_hsl(var(--f5-orange)/0.6)]" />
             <div className="h-px w-16 bg-[hsl(var(--f5-orange))]/40" />
-            <img src={primeLogo} alt="Prime Franchising Solutions" className="h-10 w-auto drop-shadow-[0_0_20px_hsl(var(--f5-orange)/0.4)]" />
+            <img src={primeLogo} alt="Prime Franchising Solutions" className="h-12 w-auto drop-shadow-[0_0_20px_hsl(var(--f5-orange)/0.4)]" />
           </div>
 
           {/* Orbiting Items - Positioned in a circle */}
