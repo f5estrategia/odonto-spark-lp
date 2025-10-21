@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import fernandoMachado from "@/assets/fernando-machado.png";
 
 const FinalCTA = () => {
   const [formData, setFormData] = useState({
@@ -37,7 +38,7 @@ const FinalCTA = () => {
     <section id="contato" className="py-24 bg-[hsl(var(--luxury-black))]">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          {/* Left - Info */}
+          {/* Left - Info + CEO Image */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Pronto para transformar seu marketing no seu maior vendedor?
@@ -46,7 +47,7 @@ const FinalCTA = () => {
               Agende uma sessão de diagnóstico gratuita. Você vai sair com um plano de ação claro para sua clínica, mesmo que decida não trabalhar conosco.
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-4 mb-8">
               {[
                 "Análise completa da sua presença digital",
                 "Mapeamento de oportunidades de crescimento",
@@ -58,6 +59,21 @@ const FinalCTA = () => {
                   <span className="text-[hsl(var(--text-secondary))]">{benefit}</span>
                 </div>
               ))}
+            </div>
+
+            {/* Fernando Machado Image */}
+            <div className="flex items-center gap-4 p-6 bg-[hsl(var(--luxury-dark))] border border-white/10 rounded-2xl">
+              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-[hsl(var(--f5-orange))] flex-shrink-0">
+                <img
+                  src={fernandoMachado}
+                  alt="Fernando Machado - CEO"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <p className="text-white font-bold text-lg">Fernando Machado</p>
+                <p className="text-[hsl(var(--text-secondary))] text-sm">CEO & Fundador - F5 Marketing</p>
+              </div>
             </div>
           </div>
 
