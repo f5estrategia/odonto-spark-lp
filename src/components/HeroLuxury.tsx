@@ -31,16 +31,16 @@ const HeroLuxury = () => {
           {/* Left Column - Text */}
           <div className="text-left lg:text-left animate-fade-in-up">
             <h1 className="mb-8">
-              <span className="block text-sm md:text-base font-medium text-[hsl(var(--text-secondary))] uppercase tracking-[2px] mb-4">
+              <span className="block text-sm md:text-base font-medium text-white uppercase tracking-[2px] mb-4">
                 A agência especializada em entregar o que sua clínica mais precisa:
               </span>
-              <span className="block text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] bg-clip-text text-transparent mb-4">
+              <span className="block text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] bg-clip-text text-transparent mb-4 drop-shadow-[0_0_30px_rgba(255,99,71,0.5)]">
                 VENDER MAIS
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-[hsl(var(--text-secondary))] max-w-2xl mb-12 leading-relaxed">
-              Transformamos clínicas odontológicas que faturam R$30-50k/mês em operações de R$250k+ — com sistema completo de vendas: do lead qualificado até o fechamento de alto ticket.
+            <p className="text-lg md:text-xl text-white max-w-2xl mb-12 leading-relaxed">
+              Transformamos clínicas odontológicas que faturam <strong className="text-white font-bold">R$30-50k/mês</strong> em operações de <strong className="text-[hsl(var(--f5-orange))] font-bold">R$250k+</strong> — com sistema completo de vendas: do lead qualificado até o fechamento de alto ticket.
             </p>
 
             <Button
