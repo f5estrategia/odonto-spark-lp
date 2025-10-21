@@ -58,27 +58,27 @@ const Methodology = () => {
         </div>
 
         {/* System Flow */}
-        <div className="max-w-4xl mx-auto space-y-8 relative mb-16">
+        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 relative mb-16">
           {/* Vertical Line */}
-          <div className="absolute left-10 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[hsl(var(--f5-orange))] to-transparent opacity-30" />
+          <div className="absolute left-8 md:left-10 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[hsl(var(--f5-orange))] to-transparent opacity-30" />
 
           {steps.map((step, index) => (
-            <div key={index} className="grid grid-cols-[80px_1fr] gap-6 items-start relative">
+            <div key={index} className="grid grid-cols-[60px_1fr] md:grid-cols-[80px_1fr] gap-4 md:gap-6 items-start relative">
               {/* Number */}
-              <div className="w-20 h-20 rounded-full bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] flex items-center justify-center text-white font-extrabold text-2xl shadow-[0_10px_30px_hsl(var(--f5-orange)/0.4)] relative z-10">
+              <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] flex items-center justify-center text-white font-extrabold text-xl md:text-2xl shadow-[0_10px_30px_hsl(var(--f5-orange)/0.4)] relative z-10">
                 {step.number}
               </div>
 
               {/* Content */}
-              <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-2xl p-6 hover:translate-x-2 hover:bg-[hsl(var(--luxury-dark-soft))] hover:border-[hsl(var(--f5-orange))] hover:shadow-[0_10px_30px_hsl(var(--f5-orange)/0.2)] transition-all duration-300 group relative">
-                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                <p className="text-[hsl(var(--text-secondary))] leading-relaxed">
+              <div className="bg-[hsl(var(--luxury-dark))] border border-white/8 rounded-xl md:rounded-2xl p-4 md:p-6 hover:translate-x-2 hover:bg-[hsl(var(--luxury-dark-soft))] hover:border-[hsl(var(--f5-orange))] hover:shadow-[0_10px_30px_hsl(var(--f5-orange)/0.2)] transition-all duration-300 group relative">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 pr-12">{step.title}</h3>
+                <p className="text-sm md:text-base text-[hsl(var(--text-secondary))] leading-relaxed">
                   {step.description}
                 </p>
                 
                 {/* Icon */}
-                <div className="absolute top-6 right-6 w-10 h-10 bg-[hsl(var(--f5-orange))]/10 rounded-xl flex items-center justify-center">
-                  <step.icon className="w-6 h-6 text-[hsl(var(--f5-orange))]" />
+                <div className="absolute top-4 md:top-6 right-4 md:right-6 w-8 h-8 md:w-10 md:h-10 bg-[hsl(var(--f5-orange))]/10 rounded-lg md:rounded-xl flex items-center justify-center">
+                  <step.icon className="w-4 h-4 md:w-6 md:h-6 text-[hsl(var(--f5-orange))]" />
                 </div>
               </div>
             </div>
@@ -86,15 +86,15 @@ const Methodology = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
+        <div className="text-center px-4">
           <Button
             onClick={scrollToForm}
             size="lg"
             variant="outline"
-            className="border-2 border-[hsl(var(--f5-orange))] text-white hover:bg-[hsl(var(--f5-orange))] hover:shadow-[0_8px_30px_hsl(var(--f5-orange)/0.4)] transition-all duration-300 hover:-translate-y-1 text-lg font-bold uppercase tracking-wider px-8 py-7"
+            className="border-2 border-[hsl(var(--f5-orange))] text-white hover:bg-[hsl(var(--f5-orange))] hover:shadow-[0_8px_30px_hsl(var(--f5-orange)/0.4)] transition-all duration-300 hover:-translate-y-1 text-sm md:text-lg font-bold uppercase tracking-wide md:tracking-wider px-4 md:px-8 py-4 md:py-7 w-full md:w-auto"
           >
-            QUERO ENTENDER O SISTEMA F5
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <span className="block md:inline">QUERO ENTENDER O SISTEMA F5</span>
+            <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 inline-block" />
           </Button>
         </div>
       </div>

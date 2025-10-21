@@ -106,36 +106,36 @@ const HeroLuxury = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="text-center">
+          <div className="text-center px-4">
             <Button
               onClick={scrollToForm}
               size="lg"
-              className="bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] hover:shadow-[0_8px_30px_hsl(var(--f5-orange)/0.5)] transition-all duration-300 hover:-translate-y-1 text-lg font-bold uppercase tracking-wider px-8 py-7"
+              className="bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] hover:shadow-[0_8px_30px_hsl(var(--f5-orange)/0.5)] transition-all duration-300 hover:-translate-y-1 text-sm md:text-lg font-bold uppercase tracking-wide md:tracking-wider px-4 md:px-8 py-4 md:py-7 w-full md:w-auto"
             >
-              FALAR COM UM CONSULTOR
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <span className="block md:inline">FALAR COM UM CONSULTOR</span>
+              <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 inline-block" />
             </Button>
           </div>
 
           {/* Metrics Grid - Mobile/Tablet */}
-          <div className="lg:hidden mt-12 grid grid-cols-3 gap-4 max-w-2xl mx-auto">
-            <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-2xl p-4 text-center">
-              <div className="text-2xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
-                +3.000
+          <div className="lg:hidden mt-12 grid grid-cols-3 gap-2 md:gap-4 max-w-2xl mx-auto px-4">
+            <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-xl md:rounded-2xl p-2 md:p-4 text-center">
+              <div className="text-lg md:text-2xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
+                +3k
               </div>
-              <div className="text-xs text-[hsl(var(--text-secondary))] mt-1">Clínicas Atendidas</div>
+              <div className="text-[10px] md:text-xs text-[hsl(var(--text-secondary))] mt-1 leading-tight">Clínicas</div>
             </div>
-            <div className="backdrop-blur-md bg-white/18 border border-white/20 rounded-2xl p-4 text-center shadow-[0_0_30px_hsl(var(--f5-orange)/0.3)]">
-              <div className="text-2xl font-extrabold bg-gradient-to-br from-[hsl(var(--f5-orange))] to-orange-300 bg-clip-text text-transparent">
+            <div className="backdrop-blur-md bg-white/18 border border-white/20 rounded-xl md:rounded-2xl p-2 md:p-4 text-center shadow-[0_0_30px_hsl(var(--f5-orange)/0.3)]">
+              <div className="text-lg md:text-2xl font-extrabold bg-gradient-to-br from-[hsl(var(--f5-orange))] to-orange-300 bg-clip-text text-transparent">
                 90x
               </div>
-              <div className="text-xs text-white mt-1">ROI Recorde</div>
+              <div className="text-[10px] md:text-xs text-white mt-1 leading-tight">ROI</div>
             </div>
-            <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-2xl p-4 text-center">
-              <div className="text-2xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
+            <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-xl md:rounded-2xl p-2 md:p-4 text-center">
+              <div className="text-lg md:text-2xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
                 70%
               </div>
-              <div className="text-xs text-[hsl(var(--text-secondary))] mt-1">Especialização</div>
+              <div className="text-[10px] md:text-xs text-[hsl(var(--text-secondary))] mt-1 leading-tight">Saúde</div>
             </div>
           </div>
         </div>
