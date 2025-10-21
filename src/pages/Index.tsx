@@ -14,9 +14,9 @@ const Index = () => {
       <Header />
       <HeroLuxury />
       <SocialProofBar />
+      <ResultsSection />
       <PainPoints />
       <Methodology />
-      <ResultsSection />
       <DifferentialsSection />
       <FinalCTA />
       <Footer />
