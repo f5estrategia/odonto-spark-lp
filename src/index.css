@@ -59,7 +59,7 @@ All colors MUST be HSL.
     overflow-x: hidden;
   }
   
-  /* Background texture */
+  /* Background texture - Inspired by sophisticated gradient backgrounds */
   body::before {
     content: "";
     position: fixed;
@@ -67,11 +67,54 @@ All colors MUST be HSL.
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: radial-gradient(circle at 20% 50%, hsl(var(--f5-orange) / 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, hsl(var(--f5-orange) / 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 20%, hsl(var(--f5-orange) / 0.05) 0%, transparent 50%);
+    background: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--f5-orange) / 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 60% at 10% 40%, hsl(var(--f5-orange) / 0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 70% at 90% 60%, hsl(var(--f5-orange) / 0.1) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 50% at 30% 80%, hsl(var(--f5-orange) / 0.08) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 40% at 70% 20%, hsl(var(--f5-orange) / 0.06) 0%, transparent 50%),
+      linear-gradient(135deg, hsl(var(--luxury-black)) 0%, hsl(0 0% 2%) 100%);
     pointer-events: none;
     z-index: 0;
+    animation: backgroundPulse 20s ease-in-out infinite;
+  }
+  
+  /* Glow overlay layer */
+  body::after {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background: 
+      radial-gradient(circle at 50% 50%, hsl(var(--f5-orange) / 0.03) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+    animation: glowPulse 15s ease-in-out infinite alternate;
+  }
+  
+  @keyframes backgroundPulse {
+    0%, 100% { 
+      opacity: 1;
+      filter: brightness(1);
+    }
+    50% { 
+      opacity: 0.95;
+      filter: brightness(1.05);
+    }
+  }
+  
+  @keyframes glowPulse {
+    0% { 
+      transform: scale(1) rotate(0deg);
+      opacity: 0.6;
+    }
+    100% { 
+      transform: scale(1.1) rotate(10deg);
+      opacity: 0.8;
+    }
   }
 }
 
