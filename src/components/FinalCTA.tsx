@@ -39,24 +39,29 @@ const FinalCTA = () => {
   return (
     <section id="contato" className="py-16 md:py-24 bg-[hsl(var(--luxury-black))]">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid gap-6 md:gap-12 items-center mt-8 md:mt-24 max-w-5xl mx-auto">
-          {/* Left - Info + CEO Image - Ordem invertida em mobile */}
-          <div className="order-2 md:order-1">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6 leading-tight">
-              Pronto para transformar seu marketing no seu maior vendedor?
-            </h2>
-            <p className="text-base md:text-lg text-[hsl(var(--text-secondary))] mb-6 md:mb-8 leading-relaxed">
-              Agende uma sessão de diagnóstico gratuita. Você vai sair com um plano de ação claro para sua clínica, mesmo que decida não trabalhar conosco.
-            </p>
+        {/* Header Section */}
+        <div className="text-center mb-8 md:mb-12 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
+            Pronto para transformar seu marketing no seu maior vendedor?
+          </h2>
+          <p className="text-base md:text-lg text-[hsl(var(--text-secondary))] leading-relaxed">
+            Agende uma sessão de diagnóstico gratuita. Você vai sair com um plano de ação claro para sua clínica, mesmo que decida não trabalhar conosco.
+          </p>
+        </div>
 
-            <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-[1fr_480px] gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
+          {/* Left - Benefits */}
+          <div className="order-2 lg:order-1 space-y-6 md:space-y-8">
+            <div className="space-y-3 md:space-y-4">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">O que você vai receber:</h3>
               {[
                 "Análise completa da sua presença digital",
                 "Mapeamento de oportunidades de crescimento",
                 "Plano de ação personalizado para sua clínica",
                 "Sem compromisso - 100% gratuito",
               ].map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
+                <div key={index} className="flex items-start gap-3 bg-[hsl(var(--luxury-dark))]/50 border border-white/5 rounded-xl p-4 hover:border-[hsl(var(--f5-orange))]/30 transition-all duration-300">
                   <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-[hsl(var(--f5-orange))] flex-shrink-0 mt-0.5" />
                   <span className="text-sm md:text-base text-[hsl(var(--text-secondary))]">{benefit}</span>
                 </div>
@@ -64,31 +69,31 @@ const FinalCTA = () => {
             </div>
 
             {/* Partner Badges */}
-            <div className="p-3 md:p-6 bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] border border-white/10 rounded-xl md:rounded-2xl shadow-xl">
-              <p className="text-white font-semibold text-[10px] md:text-sm mb-2 md:mb-4 text-center">Parceiros Oficiais</p>
-              <div className="flex items-center justify-center gap-3 md:gap-6 flex-wrap">
+            <div className="p-4 md:p-6 bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] border border-white/10 rounded-2xl shadow-xl">
+              <p className="text-white font-semibold text-xs md:text-sm mb-3 md:mb-4 text-center">Parceiros Oficiais</p>
+              <div className="flex items-center justify-center gap-4 md:gap-6 flex-wrap">
                 <img
                   src={googlePartnerBadge}
                   alt="Google Partner"
-                  className="h-8 md:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  className="h-10 md:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
                 <img
                   src={metaPartnerBadge}
                   alt="Meta Business Partner"
-                  className="h-8 md:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  className="h-10 md:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
                 <img
                   src={rdPartnerBadge}
                   alt="RD Station Partner"
-                  className="h-6 md:h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  className="h-8 md:h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
               </div>
             </div>
           </div>
 
           {/* Right - Form - Aparece primeiro em mobile */}
-          <div className="order-1 md:order-2 bg-[hsl(var(--luxury-dark))] border border-white/10 rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-2xl">
-            <h3 className="text-lg md:text-2xl font-bold text-white mb-5 md:mb-6">Agende sua Sessão Estratégica</h3>
+          <div className="order-1 lg:order-2 bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] border border-white/10 rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-2xl sticky top-24">
+            <h3 className="text-lg md:text-xl font-bold text-white mb-5 md:mb-6 text-center">Agende sua Sessão Estratégica</h3>
 
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div className="relative">
@@ -170,14 +175,14 @@ const FinalCTA = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] hover:shadow-[0_8px_30px_hsl(var(--f5-orange)/0.5)] transition-all duration-300 hover:-translate-y-1 text-sm md:text-lg font-bold uppercase tracking-wide md:tracking-wider py-4 md:py-7"
+                className="w-full bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] hover:shadow-[0_8px_30px_hsl(var(--f5-orange)/0.5)] transition-all duration-300 hover:-translate-y-1 text-sm md:text-base font-bold uppercase tracking-wide py-4 md:py-6"
               >
-                <span className="block md:inline">{isSubmitting ? "Enviando..." : "AGENDAR SESSÃO ESTRATÉGICA"}</span>
+                <span className="block md:inline">{isSubmitting ? "Enviando..." : "AGENDAR SESSÃO"}</span>
                 <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 inline-block" />
               </Button>
 
-              <p className="text-[10px] md:text-xs text-center text-[hsl(var(--text-muted))] leading-relaxed">
-                Seus dados estão protegidos. Resposta garantida em até 2 horas úteis.
+              <p className="text-[10px] md:text-xs text-center text-[hsl(var(--text-muted))] leading-relaxed mt-3">
+                🔒 Seus dados estão protegidos. Resposta em até 2h úteis.
               </p>
             </form>
           </div>
