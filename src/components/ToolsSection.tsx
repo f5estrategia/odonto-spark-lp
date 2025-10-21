@@ -1,9 +1,11 @@
-import { Target, Users, RefreshCw } from "lucide-react";
+import { RefreshCw } from "lucide-react";
+import googleAdsIcon from "@/assets/google-ads-icon.png";
+import metaIcon from "@/assets/meta-icon.png";
 
 const ToolsSection = () => {
   const tools = [
     {
-      icon: Target,
+      icon: "google",
       platform: "Google Ads",
       title: "Alta intenção de compra",
       description: "Atingimos clientes no exato momento em que procuram soluções",
@@ -16,7 +18,7 @@ const ToolsSection = () => {
       ]
     },
     {
-      icon: Users,
+      icon: "meta",
       platform: "Meta Ads",
       title: "Facebook e Instagram",
       description: "Campanhas direcionadas para o perfil do seu público",
@@ -63,7 +65,6 @@ const ToolsSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {tools.map((tool, index) => {
-            const Icon = tool.icon;
             return (
               <div
                 key={index}
@@ -72,7 +73,13 @@ const ToolsSection = () => {
                 {/* Icon */}
                 <div className="mb-6 relative">
                   <div className="w-16 h-16 rounded-xl bg-[hsl(var(--f5-orange))]/10 border border-[hsl(var(--f5-orange))]/30 flex items-center justify-center group-hover:bg-[hsl(var(--f5-orange))]/20 transition-all duration-300">
-                    <Icon className="w-8 h-8 text-[hsl(var(--f5-orange))]" />
+                    {tool.icon === "google" ? (
+                      <img src={googleAdsIcon} alt="Google Ads" className="w-10 h-10 object-contain" />
+                    ) : tool.icon === "meta" ? (
+                      <img src={metaIcon} alt="Meta" className="w-8 h-8 object-contain" />
+                    ) : (
+                      <tool.icon className="w-8 h-8 text-[hsl(var(--f5-orange))]" />
+                    )}
                   </div>
                 </div>
 
