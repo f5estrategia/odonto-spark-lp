@@ -12,7 +12,7 @@ import rdPartnerBadge from "@/assets/rd-partner-badge.png";
 // Configure Supabase
 const supabase = createClient(
   'https://imotgvapfkebngteuccf.supabase.co',
-  'sb_publishable_m19bRUedT95_q2oGRMaZ8w_Xqvm4_zV'
+  'sb_publishable_mi9bRUedT95_q2oGRMaZ8w_Xqvm4_zV'
 );
 
 const formSchema = z.object({
