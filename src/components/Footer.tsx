@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import f5Logo from "@/assets/f5-logo.png";
 
 const Footer = () => {
@@ -44,16 +44,12 @@ const Footer = () => {
             <h4 className="font-bold text-white mb-4 text-lg">Contato</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2 text-[hsl(var(--text-secondary))]">
-                <Phone className="w-4 h-4 text-[hsl(var(--f5-orange))]" />
-                <span>(11) 99999-9999</span>
-              </li>
-              <li className="flex items-center gap-2 text-[hsl(var(--text-secondary))]">
                 <Mail className="w-4 h-4 text-[hsl(var(--f5-orange))]" />
                 <span>contato@f5estrategia.com</span>
               </li>
               <li className="flex items-center gap-2 text-[hsl(var(--text-secondary))]">
                 <MapPin className="w-4 h-4 text-[hsl(var(--f5-orange))]" />
-                <span>São Paulo, SP</span>
+                <span>Florianópolis, SC</span>
               </li>
             </ul>
           </div>
@@ -62,7 +58,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-white/8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-[hsl(var(--text-muted))] text-center md:text-left">
-            © 2024 F5 Estratégia. Todos os direitos reservados.
+            © 2024 f5 estratégia. Todos os direitos reservados.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-[hsl(var(--text-muted))] hover:text-[hsl(var(--f5-orange))] transition-colors">

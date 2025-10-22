@@ -184,87 +184,55 @@ const ResultsSection = () => {
           </div>
         </div>
 
-        {/* TIER 2 - CASES DE APOIO - Com Slider em Mobile */}
-        <div className="relative mb-16">
-          {/* Desktop - Grid Normal */}
-          <div className="hidden lg:grid lg:grid-cols-4 gap-5">
-            {[
-              { name: "ORAL UNIC NATAL", metric: "Vendas", value: "R$ 800k+", desc: 'R$42 mil se transformaram em <span class="text-white font-semibold">R$800 mil</span>. Crescimento previsível mês após mês.', period: "Período: 12 meses" },
-              { name: "ORAL UNIC IBIRAMA", metric: "ROAS", value: "64,65x", desc: '<span class="text-white font-semibold">52 vendas em 30 dias</span>. R$352 mil faturados. Ticket médio de R$6.774.' },
-              { name: "ORAL UNIC PRES. PRUDENTE", metric: "ROAS", value: "28x", desc: '<span class="text-white font-semibold">R$93.100 efetivados</span> em apenas 18 dias. Velocidade e conversão.' },
-              { name: "INNOVARE SORRISOS", metric: "Vendas", value: "R$ 105k", desc: 'Mais de <span class="text-white font-semibold">R$105 mil em vendas</span> em 30 dias. Crescimento acelerado.' },
-              { name: "CLINIC DENTE", metric: "Vendas", value: "R$ 103k", desc: '<span class="text-white font-semibold">R$103.160 em vendas</span> com tráfego pago em apenas 1 mês.' },
-              { name: "SERIDÓ MED", metric: "Receita", value: "R$ 100k", desc: '<span class="text-white font-semibold">R$100 mil em receita</span> com investimento de apenas R$3.256 em 1 mês.' },
-              { name: "ODONTO EXCELLENCE", metric: "CPL", value: "R$ 24", desc: 'CPL reduzido de <span class="text-white font-semibold">R$150 para R$24</span> em menos de 30 dias.' },
-              { name: "ORAL UNIC SERTÃOZINHO", metric: "CPL", value: "R$ 5,54", desc: 'CPL reduzido de <span class="text-white font-semibold">R$65 para R$5,54</span> em menos de 24h.' }
-            ].map((item, index) => (
-              <div key={index} className="group bg-[hsl(var(--luxury-dark))] border border-white/5 rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-white/10">
-                <div className="p-6 space-y-5">
-                  <h4 className="text-base font-bold text-white tracking-tight">{item.name}</h4>
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl blur-sm opacity-50 group-hover:opacity-70 transition-opacity"></div>
-                    <div className="relative bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl p-4 border border-[hsl(var(--f5-orange))]/20">
-                      <div className="text-[10px] font-bold text-white/80 uppercase tracking-[3px] mb-1">{item.metric}</div>
-                      <div className="text-3xl font-black text-white">{item.value}</div>
-                    </div>
-                  </div>
-                  <p className="text-[hsl(var(--text-secondary))] text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: item.desc }} />
-                  {item.period && <div className="text-xs text-[hsl(var(--text-muted))] pt-2 border-t border-white/5">{item.period}</div>}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Mobile/Tablet - Slider */}
-          <div className="lg:hidden relative max-w-xl mx-auto px-4">
-            <div className="overflow-hidden" ref={emblaCasesRef}>
-              <div className="flex gap-4">
-                {[
-                  { name: "ORAL UNIC NATAL", metric: "Vendas", value: "R$ 800k+", desc: 'R$42 mil se transformaram em <span class="text-white font-semibold">R$800 mil</span>. Crescimento previsível mês após mês.', period: "Período: 12 meses" },
-                  { name: "ORAL UNIC IBIRAMA", metric: "ROAS", value: "64,65x", desc: '<span class="text-white font-semibold">52 vendas em 30 dias</span>. R$352 mil faturados. Ticket médio de R$6.774.' },
-                  { name: "ORAL UNIC PRES. PRUDENTE", metric: "ROAS", value: "28x", desc: '<span class="text-white font-semibold">R$93.100 efetivados</span> em apenas 18 dias. Velocidade e conversão.' },
-                  { name: "INNOVARE SORRISOS", metric: "Vendas", value: "R$ 105k", desc: 'Mais de <span class="text-white font-semibold">R$105 mil em vendas</span> em 30 dias. Crescimento acelerado.' },
-                  { name: "CLINIC DENTE", metric: "Vendas", value: "R$ 103k", desc: '<span class="text-white font-semibold">R$103.160 em vendas</span> com tráfego pago em apenas 1 mês.' },
-                  { name: "SERIDÓ MED", metric: "Receita", value: "R$ 100k", desc: '<span class="text-white font-semibold">R$100 mil em receita</span> com investimento de apenas R$3.256 em 1 mês.' },
-                  { name: "ODONTO EXCELLENCE", metric: "CPL", value: "R$ 24", desc: 'CPL reduzido de <span class="text-white font-semibold">R$150 para R$24</span> em menos de 30 dias.' },
-                  { name: "ORAL UNIC SERTÃOZINHO", metric: "CPL", value: "R$ 5,54", desc: 'CPL reduzido de <span class="text-white font-semibold">R$65 para R$5,54</span> em menos de 24h.' }
-                ].map((item, index) => (
-                  <div key={index} className="flex-[0_0_85%] md:flex-[0_0_70%] min-w-0">
-                    <div className="group bg-[hsl(var(--luxury-dark))] border border-white/5 rounded-3xl overflow-hidden h-full">
-                      <div className="p-6 space-y-5">
-                        <h4 className="text-base font-bold text-white tracking-tight">{item.name}</h4>
-                        <div className="relative">
-                          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl blur-sm opacity-50"></div>
-                          <div className="relative bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl p-4 border border-[hsl(var(--f5-orange))]/20">
-                            <div className="text-[10px] font-bold text-white/80 uppercase tracking-[3px] mb-1">{item.metric}</div>
-                            <div className="text-3xl font-black text-white">{item.value}</div>
-                          </div>
+        {/* TIER 2 - CASES DE APOIO - Slider Sofisticado em Todas as Telas */}
+        <div className="relative mb-16 max-w-7xl mx-auto">
+          <div className="overflow-hidden px-4 md:px-8" ref={emblaCasesRef}>
+            <div className="flex gap-5 md:gap-6">
+              {[
+                { name: "ORAL UNIC NATAL", metric: "Vendas", value: "R$ 800k+", desc: 'R$42 mil se transformaram em <span class="text-white font-semibold">R$800 mil</span>. Crescimento previsível mês após mês.', period: "Período: 12 meses" },
+                { name: "ORAL UNIC IBIRAMA", metric: "ROAS", value: "64,65x", desc: '<span class="text-white font-semibold">52 vendas em 30 dias</span>. R$352 mil faturados. Ticket médio de R$6.774.' },
+                { name: "ORAL UNIC PRES. PRUDENTE", metric: "ROAS", value: "28x", desc: '<span class="text-white font-semibold">R$93.100 efetivados</span> em apenas 18 dias. Velocidade e conversão.' },
+                { name: "INNOVARE SORRISOS", metric: "Vendas", value: "R$ 105k", desc: 'Mais de <span class="text-white font-semibold">R$105 mil em vendas</span> em 30 dias. Crescimento acelerado.' },
+                { name: "CLINIC DENTE", metric: "Vendas", value: "R$ 103k", desc: '<span class="text-white font-semibold">R$103.160 em vendas</span> com tráfego pago em apenas 1 mês.' },
+                { name: "SERIDÓ MED", metric: "Receita", value: "R$ 100k", desc: '<span class="text-white font-semibold">R$100 mil em receita</span> com investimento de apenas R$3.256 em 1 mês.' },
+                { name: "ODONTO EXCELLENCE", metric: "CPL", value: "R$ 24", desc: 'CPL reduzido de <span class="text-white font-semibold">R$150 para R$24</span> em menos de 30 dias.' },
+                { name: "ORAL UNIC SERTÃOZINHO", metric: "CPL", value: "R$ 5,54", desc: 'CPL reduzido de <span class="text-white font-semibold">R$65 para R$5,54</span> em menos de 24h.' }
+              ].map((item, index) => (
+                <div key={index} className="flex-[0_0_90%] sm:flex-[0_0_70%] md:flex-[0_0_45%] lg:flex-[0_0_30%] xl:flex-[0_0_23%] min-w-0">
+                  <div className="group bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] border border-white/8 rounded-3xl overflow-hidden hover:-translate-y-2 hover:border-[hsl(var(--f5-orange))]/50 transition-all duration-500 hover:shadow-[0_20px_60px_hsl(var(--f5-orange)/0.3)] h-full">
+                    <div className="p-6 space-y-5 h-full flex flex-col">
+                      <h4 className="text-base font-bold text-white tracking-tight">{item.name}</h4>
+                      <div className="relative flex-grow-0">
+                        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl blur-sm opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                        <div className="relative bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] rounded-2xl p-4 border border-[hsl(var(--f5-orange))]/20">
+                          <div className="text-[10px] font-bold text-white/80 uppercase tracking-[3px] mb-1">{item.metric}</div>
+                          <div className="text-3xl font-black text-white">{item.value}</div>
                         </div>
-                        <p className="text-[hsl(var(--text-secondary))] text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: item.desc }} />
-                        {item.period && <div className="text-xs text-[hsl(var(--text-muted))] pt-2 border-t border-white/5">{item.period}</div>}
                       </div>
+                      <p className="text-[hsl(var(--text-secondary))] text-sm leading-relaxed flex-grow" dangerouslySetInnerHTML={{ __html: item.desc }} />
+                      {item.period && <div className="text-xs text-[hsl(var(--text-muted))] pt-2 border-t border-white/5 flex-grow-0">{item.period}</div>}
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={scrollCasesPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 rounded-full bg-[hsl(var(--f5-orange))] hover:bg-[hsl(var(--f5-orange-dark))] text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
-              aria-label="Anterior"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={scrollCasesNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 rounded-full bg-[hsl(var(--f5-orange))] hover:bg-[hsl(var(--f5-orange-dark))] text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
-              aria-label="Próximo"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
           </div>
+
+          {/* Navigation Buttons - Sofisticados */}
+          <button
+            onClick={scrollCasesPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-4 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] hover:shadow-[0_0_30px_hsl(var(--f5-orange)/0.6)] text-white flex items-center justify-center transition-all duration-300 hover:scale-110 z-10 border-2 border-white/10"
+            aria-label="Anterior"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={scrollCasesNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-4 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] hover:shadow-[0_0_30px_hsl(var(--f5-orange)/0.6)] text-white flex items-center justify-center transition-all duration-300 hover:scale-110 z-10 border-2 border-white/10"
+            aria-label="Próximo"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
         </div>
 
         {/* Testimonials Section */}

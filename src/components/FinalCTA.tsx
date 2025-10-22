@@ -111,23 +111,23 @@ const FinalCTA = () => {
             </div>
 
             {/* Partner Badges */}
-            <div className="p-4 md:p-6 bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] border border-white/10 rounded-2xl shadow-xl">
-              <p className="text-white font-semibold text-xs md:text-sm mb-3 md:mb-4 text-center">Parceiros Oficiais</p>
-              <div className="flex items-center justify-center gap-4 md:gap-6 flex-wrap">
+            <div className="p-5 md:p-6 bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] border border-white/10 rounded-2xl shadow-xl">
+              <p className="text-white font-semibold text-xs md:text-sm mb-4 text-center">Parceiros Oficiais</p>
+              <div className="flex items-center justify-center gap-6 md:gap-8 flex-wrap">
                 <img
                   src={googlePartnerBadge}
                   alt="Google Partner"
-                  className="h-10 md:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  className="h-8 md:h-9 w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-300"
                 />
                 <img
                   src={metaPartnerBadge}
                   alt="Meta Business Partner"
-                  className="h-10 md:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  className="h-8 md:h-9 w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-300"
                 />
                 <img
                   src={rdPartnerBadge}
                   alt="RD Station Partner"
-                  className="h-8 md:h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  className="h-7 md:h-8 w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-300"
                 />
               </div>
             </div>
