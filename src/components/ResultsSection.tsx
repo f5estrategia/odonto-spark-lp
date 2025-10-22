@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import viviaOdontoImage from "@/assets/vivia-odonto.webp";
 
 const ResultsSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -71,13 +72,10 @@ const ResultsSection = () => {
           <div className="md:col-span-2 bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--f5-orange))]/5 border border-[hsl(var(--f5-orange))] rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
             <div className="relative h-64 bg-[hsl(var(--luxury-gray))] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=400&fit=crop"
+                src={viviaOdontoImage}
                 alt="Viva Odontologia"
                 className="w-full h-full object-cover opacity-70 hover:scale-110 hover:opacity-90 transition-all duration-500"
               />
-              <div className="absolute top-4 right-4 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] text-white px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wider">
-                🏆 Case Âncora
-              </div>
             </div>
 
             <div className="p-8">
