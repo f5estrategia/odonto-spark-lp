@@ -3,7 +3,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import viviaOdontoImage from "@/assets/vivia-odonto.webp";
-import oralUnicVilaMarianaImage from "@/assets/oral-unic-vila-mariana.webp";
+import oralUnicVilaMarianaImage from "@/assets/oral-unic-vila-mariana-2.webp";
 import oralUnicJoaoPessoaImage from "@/assets/oral-unic-joao-pessoa.webp";
 
 const ResultsSection = () => {
