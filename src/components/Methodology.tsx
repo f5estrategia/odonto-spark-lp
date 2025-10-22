@@ -93,7 +93,7 @@ const Methodology = () => {
             variant="outline"
             className="border-2 border-[hsl(var(--f5-orange))] text-white hover:bg-[hsl(var(--f5-orange))] hover:shadow-[0_8px_30px_hsl(var(--f5-orange)/0.4)] transition-all duration-300 hover:-translate-y-1 text-sm md:text-lg font-bold uppercase tracking-wide md:tracking-wider px-4 md:px-8 py-4 md:py-7 w-full md:w-auto"
           >
-            <span className="block md:inline">QUERO ENTENDER O SISTEMA F5</span>
+            <span className="block md:inline">QUERO ENTENDER O SISTEMA f5</span>
             <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 inline-block" />
           </Button>
         </div>

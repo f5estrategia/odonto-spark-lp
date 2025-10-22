@@ -69,6 +69,52 @@ const DifferentialsSection = () => {
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--luxury-black))]/60 via-transparent to-transparent" />
+              
+              {/* Floating Cards - Desktop */}
+              <div className="hidden lg:block">
+                {/* Card 1 - Top Left */}
+                <div className="absolute top-[8%] left-[-80px] animate-float">
+                  <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-2xl p-4 min-w-[160px] shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300">
+                    <div className="text-2xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
+                      15+
+                    </div>
+                    <div className="text-xs text-[hsl(var(--text-secondary))]">anos de experiência</div>
+                  </div>
+                </div>
+                
+                {/* Card 2 - Bottom Right */}
+                <div className="absolute bottom-[8%] right-[-80px] animate-float" style={{ animationDelay: "1.5s" }}>
+                  <div className="backdrop-blur-md bg-white/18 border border-white/20 rounded-2xl p-4 min-w-[160px] shadow-[0_24px_80px_rgba(0,0,0,0.5),0_0_44px_hsl(var(--f5-orange)/0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300">
+                    <div className="text-2xl font-extrabold bg-gradient-to-br from-[hsl(var(--f5-orange))] to-orange-300 bg-clip-text text-transparent">
+                      +3.000
+                    </div>
+                    <div className="text-xs text-white">clínicas atendidas</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Cards - Mobile/Tablet */}
+              <div className="lg:hidden">
+                {/* Card 1 - Top */}
+                <div className="absolute top-[5%] left-[5%] animate-float">
+                  <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-xl p-3 min-w-[100px] shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
+                      15+
+                    </div>
+                    <div className="text-[9px] text-[hsl(var(--text-secondary))] leading-tight">anos</div>
+                  </div>
+                </div>
+                
+                {/* Card 2 - Bottom Right */}
+                <div className="absolute bottom-[5%] right-[5%] animate-float" style={{ animationDelay: "1.5s" }}>
+                  <div className="backdrop-blur-md bg-white/18 border border-white/20 rounded-xl p-3 min-w-[100px] shadow-[0_0_30px_hsl(var(--f5-orange)/0.4)] hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-extrabold bg-gradient-to-br from-[hsl(var(--f5-orange))] to-orange-300 bg-clip-text text-transparent">
+                      +3k
+                    </div>
+                    <div className="text-[9px] text-white leading-tight">clínicas</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -80,16 +126,6 @@ const DifferentialsSection = () => {
             <p className="text-lg text-[hsl(var(--text-secondary))] leading-relaxed mb-8">
               "Construímos o maior ecossistema de soluções para clínicas do Brasil. Nossa missão é simples: fazer sua clínica vender mais, com previsibilidade e escalabilidade."
             </p>
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3 text-[hsl(var(--text-secondary))]">
-                <div className="w-2 h-2 bg-[hsl(var(--f5-orange))] rounded-full" />
-                <span className="font-medium">15+ anos de experiência</span>
-              </div>
-              <div className="flex items-center gap-3 text-[hsl(var(--text-secondary))]">
-                <div className="w-2 h-2 bg-[hsl(var(--f5-orange))] rounded-full" />
-                <span className="font-medium">3.000+ clínicas atendidas</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

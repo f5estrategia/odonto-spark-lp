@@ -9,8 +9,8 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={f5Logo} alt="F5 Logo" className="h-12 w-auto" />
-              <span className="text-xl font-bold text-white">Estratégia</span>
+              <img src={f5Logo} alt="f5 logo" className="h-12 w-auto" />
+              <span className="text-xl font-bold text-white">estratégia</span>
             </div>
             <p className="text-sm text-[hsl(var(--text-secondary))] leading-relaxed">
               Especialistas em marketing para clínicas odontológicas, estéticas e de saúde. Transformamos investimento em crescimento previsível.
@@ -23,7 +23,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li>
                 <a href="#sistema" className="text-[hsl(var(--text-secondary))] hover:text-[hsl(var(--f5-orange))] transition-colors">
-                  Sistema F5
+                  sistema f5
                 </a>
               </li>
               <li>

@@ -403,14 +403,14 @@ const ResultsSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 px-4">
           <Button
             onClick={scrollToForm}
             size="lg"
-            className="bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] hover:shadow-[0_8px_30px_hsl(var(--f5-orange)/0.5)] transition-all duration-300 hover:-translate-y-1 text-lg font-bold uppercase tracking-wider px-8 py-7"
+            className="bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] hover:shadow-[0_8px_30px_hsl(var(--f5-orange)/0.5)] transition-all duration-300 hover:-translate-y-1 text-sm md:text-lg font-bold uppercase tracking-wide md:tracking-wider px-6 md:px-8 py-5 md:py-7 w-full md:w-auto"
           >
-            QUERO RESULTADOS COMO ESTES
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <span className="block md:inline">QUERO RESULTADOS COMO ESTES</span>
+            <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 inline-block" />
           </Button>
         </div>
       </div>
