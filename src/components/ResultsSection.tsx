@@ -325,22 +325,6 @@ const ResultsSection = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Video 6 */}
-                <div className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-16px)] min-w-0">
-                  <div className="w-full rounded-2xl overflow-hidden bg-[hsl(var(--luxury-dark))] shadow-xl">
-                    <div style={{ position: 'relative', paddingBottom: '56.25%' }}>
-                      <iframe 
-                        frameBorder="0" 
-                        allowFullScreen 
-                        src="https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7ebffa1ac75e611ca004b/v4/embed.html"
-                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
-                        referrerPolicy="origin"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 
