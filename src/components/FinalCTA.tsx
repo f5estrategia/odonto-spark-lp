@@ -119,13 +119,13 @@ const FinalCTA = () => {
         received_at: new Date().toISOString(),
       };
 
-      // Enviar para Supabase
-      const { data, error } = await supabase
-        .from('leads')
-        .insert([dadosLead])
-        .select();
+      // Enviar para Edge Function ao invés de insert direto
+      const { data, error } = await supabase.functions.invoke('submit-lead', {
+        body: dadosLead
+      });
 
       if (error) throw error;
+      if (!data?.success) throw new Error(data?.error || 'Erro ao enviar');
 
       toast({
         title: "Recebemos seu contato!",
