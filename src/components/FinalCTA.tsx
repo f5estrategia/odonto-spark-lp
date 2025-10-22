@@ -16,11 +16,11 @@ const supabase = createClient(
 );
 
 const formSchema = z.object({
-  nome: z.string().trim().min(2, "Nome muito curto").max(100, "Nome muito longo"),
-  email: z.string().trim().email("Email inválido").max(255, "Email muito longo"),
-  telefone: z.string().trim().min(10, "Telefone inválido").max(20, "Telefone muito longo"),
-  clinica: z.string().trim().min(2, "Nome da clínica muito curto").max(100, "Nome da clínica muito longo"),
-  resultados: z.string().trim().min(10, "Descreva os resultados desejados").max(1000, "Texto muito longo"),
+  nome: z.string().trim().min(1, "Nome é obrigatório"),
+  email: z.string().trim().email("Email inválido"),
+  telefone: z.string().trim().min(10, "WhatsApp deve ter no mínimo 10 dígitos"),
+  clinica: z.string().trim().min(1, "Nome da clínica é obrigatório"),
+  resultados: z.string().trim().min(1, "Este campo é obrigatório"),
 });
 
 const FinalCTA = () => {
@@ -28,11 +28,27 @@ const FinalCTA = () => {
     nome: "",
     email: "",
     telefone: "",
+    telefoneDisplay: "", // Para exibição formatada
     clinica: "",
     resultados: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  // Formatar telefone visualmente
+  const formatarTelefone = (valor: string) => {
+    // Remove tudo que não é número
+    const numeros = valor.replace(/\D/g, '');
+    
+    // Aplica a máscara
+    if (numeros.length <= 10) {
+      // Formato: (99) 9999-9999
+      return numeros.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
+    } else {
+      // Formato: (99) 99999-9999
+      return numeros.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
+    }
+  };
 
   const capturarIP = async () => {
     try {
@@ -116,7 +132,7 @@ const FinalCTA = () => {
         description: "Nossa equipe entrará em contato em até 2 horas úteis.",
       });
 
-      setFormData({ nome: "", email: "", telefone: "", clinica: "", resultados: "" });
+      setFormData({ nome: "", email: "", telefone: "", telefoneDisplay: "", clinica: "", resultados: "" });
 
       // Disparar evento para GTM/Pixel
       if ((window as any).dataLayer) {
@@ -148,7 +164,22 @@ const FinalCTA = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    
+    if (name === 'telefone') {
+      // Remove caracteres não numéricos para armazenar
+      const apenasNumeros = value.replace(/\D/g, '');
+      // Formata para exibição
+      const valorFormatado = formatarTelefone(value);
+      
+      setFormData({ 
+        ...formData, 
+        telefone: apenasNumeros,
+        telefoneDisplay: valorFormatado
+      });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   return (
@@ -266,9 +297,10 @@ const FinalCTA = () => {
                   type="tel"
                   id="telefone"
                   name="telefone"
-                  value={formData.telefone}
+                  value={formData.telefoneDisplay}
                   onChange={handleChange}
                   required
+                  maxLength={15}
                   className="w-full bg-[hsl(var(--luxury-gray))] border border-white/10 rounded-lg md:rounded-xl px-3 md:px-4 pt-5 md:pt-6 pb-2 text-sm md:text-base text-white focus:outline-none focus:border-[hsl(var(--f5-orange))] transition-colors peer"
                   placeholder=" "
                 />
