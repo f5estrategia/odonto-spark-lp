@@ -70,8 +70,9 @@ const FinalCTA = () => {
         email: validatedData.email,
         telefone: validatedData.telefone,
         campos_personalizado: { 
-          clinica: validatedData.clinica,
-          resultados: validatedData.resultados 
+          nome_clinica: validatedData.clinica,
+          resultados_desejados: validatedData.resultados,
+          origem_formulario: 'Sessão Estratégica'
         },
         politicas_privacidade: true,
         
