@@ -3,9 +3,16 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { createClient } from '@supabase/supabase-js';
 import googlePartnerBadge from "@/assets/google-partner-badge.png";
 import metaPartnerBadge from "@/assets/meta-partner-badge.png";
 import rdPartnerBadge from "@/assets/rd-partner-badge.png";
+
+// Configure Supabase
+const supabase = createClient(
+  'https://imotgvapfkebngteuccf.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imltb3RndmFwZmtlYm5ndGV1Y2NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjExNjQyMjQsImV4cCI6MjA3NjczNzYyNH0.ys4hd01LxTPzMWWXDmnfTXKp3GxwW6NVcaWnROCxd-0'
+);
 
 const formSchema = z.object({
   nome: z.string().trim().min(2, "Nome muito curto").max(100, "Nome muito longo"),
@@ -24,6 +31,17 @@ const FinalCTA = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  const capturarIP = async () => {
+    try {
+      const res = await fetch('https://api.ipify.org?format=json');
+      const data = await res.json();
+      return data.ip;
+    } catch (e) {
+      console.error('Erro ao capturar IP:', e);
+      return '';
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -32,22 +50,59 @@ const FinalCTA = () => {
       // Validar dados
       const validatedData = formSchema.parse(formData);
 
-      // Enviar para sheet.best
-      const response = await fetch(
-        "https://api.sheetbest.com/sheets/5bb3fb70-91f2-42dd-a48c-e80cb27ecf11",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            nome: validatedData.nome,
-            email: validatedData.email,
-            telefone: validatedData.telefone,
-            clinica: validatedData.clinica
-          }),
-        }
-      );
+      // Capturar UTMs da URL
+      const params = new URLSearchParams(window.location.search);
+      
+      // Capturar IP do usuário
+      const ipUsuario = await capturarIP();
+
+      // Capturar dados do dispositivo/navegador
+      const userAgent = navigator.userAgent;
+      const dispositivo = /Mobile|Android|iPhone/i.test(userAgent) ? 'Mobile' : 'Desktop';
+
+      // Montar objeto completo
+      const dadosLead = {
+        // Dados do formulário
+        nome: validatedData.nome,
+        email: validatedData.email,
+        telefone: validatedData.telefone,
+        campos_personalizado: { clinica: validatedData.clinica },
+        politicas_privacidade: true,
+        
+        // UTMs
+        utm_source: params.get('utm_source') || '',
+        utm_medium: params.get('utm_medium') || '',
+        utm_campaign: params.get('utm_campaign') || '',
+        utm_term: params.get('utm_term') || '',
+        utm_content: params.get('utm_content') || '',
+        utm_adgroup: params.get('utm_adgroup') || '',
+        
+        // Identificadores
+        nome_formulario: 'Formulário F5 Odonto',
+        id_formulario: 'form-f5-principal',
+        id_pagina: window.location.pathname,
+        
+        // Origem e navegação
+        referral_source: document.referrer || 'Direto',
+        url_conversao: window.location.href,
+        
+        // Dados técnicos
+        dispositivo,
+        user_agent: userAgent,
+        ip_usuario: ipUsuario,
+        
+        // Timestamp
+        data_conversao: new Date().toISOString(),
+        received_at: new Date().toISOString(),
+      };
+
+      // Enviar para Supabase
+      const { data, error } = await supabase
+        .from('leads')
+        .insert([dadosLead])
+        .select();
+
+      if (error) throw error;
 
       toast({
         title: "Recebemos seu contato!",
@@ -55,6 +110,16 @@ const FinalCTA = () => {
       });
 
       setFormData({ nome: "", email: "", telefone: "", clinica: "" });
+
+      // Disparar evento para GTM/Pixel
+      if ((window as any).dataLayer) {
+        (window as any).dataLayer.push({
+          event: 'form_submission',
+          formId: 'form-f5-principal',
+          email: validatedData.email
+        });
+      }
+
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast({
@@ -63,6 +128,7 @@ const FinalCTA = () => {
           variant: "destructive",
         });
       } else {
+        console.error('Erro ao enviar:', error);
         toast({
           title: "Erro ao enviar",
           description: "Tente novamente em alguns instantes.",
