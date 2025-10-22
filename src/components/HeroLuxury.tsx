@@ -87,9 +87,9 @@ const HeroLuxury = () => {
               <div className="lg:hidden absolute top-[5%] left-[5%] animate-float">
                 <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-xl p-3 min-w-[110px] shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-300">
                   <div className="text-xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
-                    +3k
+                    +3.000
                   </div>
-                  <div className="text-[10px] text-[hsl(var(--text-secondary))] leading-tight">Clínicas</div>
+                  <div className="text-[10px] text-[hsl(var(--text-secondary))] leading-tight">Clínicas Atendidas</div>
                 </div>
               </div>
 
@@ -109,7 +109,7 @@ const HeroLuxury = () => {
                   <div className="text-xl font-extrabold bg-gradient-to-br from-[hsl(var(--f5-orange))] to-orange-300 bg-clip-text text-transparent">
                     90x
                   </div>
-                  <div className="text-[10px] text-white leading-tight">ROI</div>
+                  <div className="text-[10px] text-white leading-tight">ROI Recorde</div>
                 </div>
               </div>
 
@@ -129,7 +129,7 @@ const HeroLuxury = () => {
                   <div className="text-xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
                     70%
                   </div>
-                  <div className="text-[10px] text-[hsl(var(--text-secondary))] leading-tight">Saúde</div>
+                  <div className="text-[10px] text-[hsl(var(--text-secondary))] leading-tight">Especialização Saúde</div>
                 </div>
               </div>
             </div>

@@ -78,7 +78,7 @@ const DifferentialsSection = () => {
                     <div className="text-3xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
                       15+
                     </div>
-                    <div className="text-xs text-[hsl(var(--text-secondary))]">anos</div>
+                    <div className="text-xs text-[hsl(var(--text-secondary))]">anos de experiência</div>
                   </div>
                 </div>
                 
@@ -86,9 +86,9 @@ const DifferentialsSection = () => {
                 <div className="absolute bottom-[8%] right-[6%] animate-float z-10" style={{ animationDelay: "1.5s" }}>
                   <div className="backdrop-blur-md bg-[hsl(var(--f5-orange))]/90 border border-[hsl(var(--f5-orange))] rounded-2xl p-4 min-w-[140px] shadow-[0_24px_80px_rgba(0,0,0,0.5),0_0_44px_hsl(var(--f5-orange)/0.6)]">
                     <div className="text-3xl font-extrabold text-white">
-                      +3k
+                      +3.000
                     </div>
-                    <div className="text-xs text-white/90">clínicas</div>
+                    <div className="text-xs text-white/90">clínicas atendidas</div>
                   </div>
                 </div>
               </div>
@@ -101,7 +101,7 @@ const DifferentialsSection = () => {
                     <div className="text-xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
                       15+
                     </div>
-                    <div className="text-[10px] text-[hsl(var(--text-secondary))] leading-tight">anos</div>
+                    <div className="text-[10px] text-[hsl(var(--text-secondary))] leading-tight">anos de experiência</div>
                   </div>
                 </div>
                 
@@ -109,9 +109,9 @@ const DifferentialsSection = () => {
                 <div className="absolute bottom-[6%] right-[6%] animate-float z-10" style={{ animationDelay: "1.5s" }}>
                   <div className="backdrop-blur-md bg-[hsl(var(--f5-orange))]/90 border border-[hsl(var(--f5-orange))] rounded-xl p-3 shadow-[0_0_30px_hsl(var(--f5-orange)/0.6)]">
                     <div className="text-xl font-extrabold text-white">
-                      +3k
+                      +3.000
                     </div>
-                    <div className="text-[10px] text-white/90 leading-tight">clínicas</div>
+                    <div className="text-[10px] text-white/90 leading-tight">clínicas atendidas</div>
                   </div>
                 </div>
               </div>
