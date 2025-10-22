@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
@@ -19,6 +20,7 @@ const formSchema = z.object({
   email: z.string().trim().email("Email inválido").max(255, "Email muito longo"),
   telefone: z.string().trim().min(10, "Telefone inválido").max(20, "Telefone muito longo"),
   clinica: z.string().trim().min(2, "Nome da clínica muito curto").max(100, "Nome da clínica muito longo"),
+  resultados: z.string().trim().min(10, "Descreva os resultados desejados").max(1000, "Texto muito longo"),
 });
 
 const FinalCTA = () => {
@@ -27,6 +29,7 @@ const FinalCTA = () => {
     email: "",
     telefone: "",
     clinica: "",
+    resultados: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -66,7 +69,10 @@ const FinalCTA = () => {
         nome: validatedData.nome,
         email: validatedData.email,
         telefone: validatedData.telefone,
-        campos_personalizado: { clinica: validatedData.clinica },
+        campos_personalizado: { 
+          clinica: validatedData.clinica,
+          resultados: validatedData.resultados 
+        },
         politicas_privacidade: true,
         
         // UTMs
@@ -109,7 +115,7 @@ const FinalCTA = () => {
         description: "Nossa equipe entrará em contato em até 2 horas úteis.",
       });
 
-      setFormData({ nome: "", email: "", telefone: "", clinica: "" });
+      setFormData({ nome: "", email: "", telefone: "", clinica: "", resultados: "" });
 
       // Disparar evento para GTM/Pixel
       if ((window as any).dataLayer) {
@@ -140,7 +146,7 @@ const FinalCTA = () => {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -289,6 +295,24 @@ const FinalCTA = () => {
                   className="absolute left-3 md:left-4 top-3 md:top-4 text-xs md:text-sm text-[hsl(var(--text-muted))] transition-all peer-focus:top-1.5 md:peer-focus:top-2 peer-focus:text-[10px] md:peer-focus:text-xs peer-focus:text-[hsl(var(--f5-orange))] peer-[&:not(:placeholder-shown)]:top-1.5 md:peer-[&:not(:placeholder-shown)]:top-2 peer-[&:not(:placeholder-shown)]:text-[10px] md:peer-[&:not(:placeholder-shown)]:text-xs"
                 >
                   Nome da Clínica
+                </label>
+              </div>
+
+              <div className="relative">
+                <Textarea
+                  id="resultados"
+                  name="resultados"
+                  value={formData.resultados}
+                  onChange={handleChange}
+                  required
+                  className="w-full min-h-[180px] bg-[hsl(var(--luxury-gray))] border border-white/10 rounded-lg md:rounded-xl px-3 md:px-4 pt-5 md:pt-6 pb-2 text-sm md:text-base text-white focus:outline-none focus:border-[hsl(var(--f5-orange))] transition-colors peer resize-none"
+                  placeholder=" "
+                />
+                <label
+                  htmlFor="resultados"
+                  className="absolute left-3 md:left-4 top-3 md:top-4 text-xs md:text-sm text-[hsl(var(--text-muted))] transition-all peer-focus:top-1.5 md:peer-focus:top-2 peer-focus:text-[10px] md:peer-focus:text-xs peer-focus:text-[hsl(var(--f5-orange))] peer-[&:not(:placeholder-shown)]:top-1.5 md:peer-[&:not(:placeholder-shown)]:top-2 peer-[&:not(:placeholder-shown)]:text-[10px] md:peer-[&:not(:placeholder-shown)]:text-xs"
+                >
+                  Quais resultados você deseja alcançar no digital?
                 </label>
               </div>
 
