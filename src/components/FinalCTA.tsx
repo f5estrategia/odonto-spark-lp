@@ -32,16 +32,20 @@ const FinalCTA = () => {
       // Validar dados
       const validatedData = formSchema.parse(formData);
 
-      // Enviar para Google Sheets
+      // Enviar para sheet.best
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbyFhpPx8IEZsdhBpO5odGgGmPeaIfsXUpNQMLW6x6DmWuvVXUpI6SqX0qTmFPupt6Yj/exec",
+        "https://api.sheetbest.com/sheets/5bb3fb70-91f2-42dd-a48c-e80cb27ecf11",
         {
           method: "POST",
-          mode: "no-cors",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(validatedData),
+          body: JSON.stringify({
+            nome: validatedData.nome,
+            email: validatedData.email,
+            telefone: validatedData.telefone,
+            clinica: validatedData.clinica
+          }),
         }
       );
 
