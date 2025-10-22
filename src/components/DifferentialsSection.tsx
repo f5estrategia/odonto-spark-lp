@@ -62,56 +62,56 @@ const DifferentialsSection = () => {
         {/* CEO Section */}
         <div className="grid md:grid-cols-2 gap-12 items-center mt-24 max-w-5xl mx-auto">
           <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+            <div className="relative rounded-3xl overflow-visible shadow-2xl border border-white/10">
               <img
                 src={fernandoMachado}
                 alt="Fernando Machado - CEO"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover rounded-3xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--luxury-black))]/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--luxury-black))]/60 via-transparent to-transparent rounded-3xl" />
               
               {/* Floating Cards - Desktop */}
-              <div className="hidden lg:block">
-                {/* Card 1 - Top Left */}
-                <div className="absolute top-[8%] left-[-80px] animate-float">
-                  <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-2xl p-4 min-w-[160px] shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300">
-                    <div className="text-2xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
+              <div className="hidden md:block">
+                {/* Card 1 - Top Left - Outside */}
+                <div className="absolute top-[15%] left-[-100px] animate-float z-20">
+                  <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-2xl p-4 min-w-[140px] shadow-[0_14px_40px_rgba(0,0,0,0.35)] hover:scale-105 transition-all duration-300">
+                    <div className="text-3xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
                       15+
                     </div>
-                    <div className="text-xs text-[hsl(var(--text-secondary))]">anos de experiência</div>
+                    <div className="text-xs text-[hsl(var(--text-secondary))]">anos</div>
                   </div>
                 </div>
                 
-                {/* Card 2 - Bottom Right */}
-                <div className="absolute bottom-[8%] right-[-80px] animate-float" style={{ animationDelay: "1.5s" }}>
-                  <div className="backdrop-blur-md bg-white/18 border border-white/20 rounded-2xl p-4 min-w-[160px] shadow-[0_24px_80px_rgba(0,0,0,0.5),0_0_44px_hsl(var(--f5-orange)/0.35)] hover:scale-105 hover:-translate-y-2 transition-all duration-300">
-                    <div className="text-2xl font-extrabold bg-gradient-to-br from-[hsl(var(--f5-orange))] to-orange-300 bg-clip-text text-transparent">
-                      +3.000
+                {/* Card 2 - Bottom Right - Inside */}
+                <div className="absolute bottom-[8%] right-[6%] animate-float z-10" style={{ animationDelay: "1.5s" }}>
+                  <div className="backdrop-blur-md bg-[hsl(var(--f5-orange))]/90 border border-[hsl(var(--f5-orange))] rounded-2xl p-4 min-w-[140px] shadow-[0_24px_80px_rgba(0,0,0,0.5),0_0_44px_hsl(var(--f5-orange)/0.6)]">
+                    <div className="text-3xl font-extrabold text-white">
+                      +3k
                     </div>
-                    <div className="text-xs text-white">clínicas atendidas</div>
+                    <div className="text-xs text-white/90">clínicas</div>
                   </div>
                 </div>
               </div>
 
-              {/* Floating Cards - Mobile/Tablet */}
-              <div className="lg:hidden">
-                {/* Card 1 - Top */}
-                <div className="absolute top-[5%] left-[5%] animate-float">
-                  <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-xl p-3 min-w-[100px] shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-300">
-                    <div className="text-lg font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
+              {/* Floating Cards - Mobile */}
+              <div className="md:hidden">
+                {/* Card 1 - Top Left - Inside */}
+                <div className="absolute top-[6%] left-[6%] animate-float z-10">
+                  <div className="backdrop-blur-md bg-white/12 border border-white/18 rounded-xl p-3 shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
+                    <div className="text-xl font-extrabold bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent">
                       15+
                     </div>
-                    <div className="text-[9px] text-[hsl(var(--text-secondary))] leading-tight">anos</div>
+                    <div className="text-[10px] text-[hsl(var(--text-secondary))] leading-tight">anos</div>
                   </div>
                 </div>
                 
-                {/* Card 2 - Bottom Right */}
-                <div className="absolute bottom-[5%] right-[5%] animate-float" style={{ animationDelay: "1.5s" }}>
-                  <div className="backdrop-blur-md bg-white/18 border border-white/20 rounded-xl p-3 min-w-[100px] shadow-[0_0_30px_hsl(var(--f5-orange)/0.4)] hover:scale-105 transition-all duration-300">
-                    <div className="text-lg font-extrabold bg-gradient-to-br from-[hsl(var(--f5-orange))] to-orange-300 bg-clip-text text-transparent">
+                {/* Card 2 - Bottom Right - Inside */}
+                <div className="absolute bottom-[6%] right-[6%] animate-float z-10" style={{ animationDelay: "1.5s" }}>
+                  <div className="backdrop-blur-md bg-[hsl(var(--f5-orange))]/90 border border-[hsl(var(--f5-orange))] rounded-xl p-3 shadow-[0_0_30px_hsl(var(--f5-orange)/0.6)]">
+                    <div className="text-xl font-extrabold text-white">
                       +3k
                     </div>
-                    <div className="text-[9px] text-white leading-tight">clínicas</div>
+                    <div className="text-[10px] text-white/90 leading-tight">clínicas</div>
                   </div>
                 </div>
               </div>
