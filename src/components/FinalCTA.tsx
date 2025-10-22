@@ -298,22 +298,17 @@ const FinalCTA = () => {
                 </label>
               </div>
 
-              <div className="relative">
+              <div>
                 <Textarea
                   id="resultados"
                   name="resultados"
                   value={formData.resultados}
                   onChange={handleChange}
                   required
-                  className="w-full min-h-[180px] bg-[hsl(var(--luxury-gray))] border border-white/10 rounded-lg md:rounded-xl px-3 md:px-4 pt-5 md:pt-6 pb-2 text-sm md:text-base text-white focus:outline-none focus:border-[hsl(var(--f5-orange))] transition-colors peer resize-none"
-                  placeholder=" "
+                  placeholder="Quais resultados você deseja alcançar no digital?"
+                  className="w-full px-4 py-3 bg-[hsl(var(--luxury-gray))] text-white rounded-lg border border-white/10 focus:ring-2 focus:ring-[hsl(var(--f5-orange))] focus:border-transparent placeholder-[hsl(var(--text-muted))] min-h-[120px] resize-none"
+                  rows={4}
                 />
-                <label
-                  htmlFor="resultados"
-                  className="absolute left-3 md:left-4 top-3 md:top-4 text-xs md:text-sm text-[hsl(var(--text-muted))] transition-all peer-focus:top-1.5 md:peer-focus:top-2 peer-focus:text-[10px] md:peer-focus:text-xs peer-focus:text-[hsl(var(--f5-orange))] peer-[&:not(:placeholder-shown)]:top-1.5 md:peer-[&:not(:placeholder-shown)]:top-2 peer-[&:not(:placeholder-shown)]:text-[10px] md:peer-[&:not(:placeholder-shown)]:text-xs"
-                >
-                  Quais resultados você deseja alcançar no digital?
-                </label>
               </div>
 
               <Button
