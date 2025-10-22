@@ -46,8 +46,18 @@ const Methodology = () => {
   ];
 
   return (
-    <section id="sistema" className="py-24 bg-gradient-to-b from-[hsl(var(--luxury-black))] to-[hsl(var(--luxury-dark))] relative">
-      <div className="container mx-auto px-6">
+    <section id="sistema" className="py-24 bg-gradient-to-b from-[hsl(var(--luxury-black))] to-[hsl(var(--luxury-dark))] relative overflow-hidden">
+      {/* Background with gradient - Like Hero */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a0e0a] via-[#2d1510] to-[#1a0e0a] opacity-60" />
+        
+        {/* Floating elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute bottom-[30%] left-[10%] w-[350px] h-[350px] rounded-full bg-[hsl(var(--f5-orange))]/30 blur-[100px] animate-float" style={{ animationDelay: "4s" }} />
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-white to-[hsl(var(--text-secondary))] bg-clip-text text-transparent mb-6">
             Chega de achismo. Nosso Sistema é a Previsibilidade que sua Clínica Precisa

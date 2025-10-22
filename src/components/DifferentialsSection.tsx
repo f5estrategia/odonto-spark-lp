@@ -5,8 +5,18 @@ import primeLogo from "@/assets/prime-logo.png";
 
 const DifferentialsSection = () => {
   return (
-    <section id="diferenciais" className="py-24 bg-gradient-to-b from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] relative">
-      <div className="container mx-auto px-6">
+    <section id="diferenciais" className="py-24 bg-gradient-to-b from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] relative overflow-hidden">
+      {/* Background with gradient - Like Hero */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a0e0a] via-[#2d1510] to-[#1a0e0a] opacity-70" />
+        
+        {/* Floating elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-[15%] right-[20%] w-[450px] h-[450px] rounded-full bg-[hsl(var(--f5-orange))]/20 blur-[120px] animate-float" style={{ animationDelay: "2s" }} />
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16 max-w-4xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-br from-white to-[hsl(var(--text-secondary))] bg-clip-text text-transparent mb-4 md:mb-6">
             Não somos uma agência generalista. Somos especialistas no seu mercado.

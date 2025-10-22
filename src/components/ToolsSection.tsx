@@ -47,11 +47,14 @@ const ToolsSection = () => {
 
   return (
     <section className="py-20 bg-gradient-to-b from-[hsl(var(--luxury-black))] to-[hsl(var(--luxury-black))/95] relative overflow-hidden">
-      {/* Background decoration */}
+      {/* Background decoration - Enhanced */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[hsl(var(--f5-orange))] rounded-full blur-[128px]" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[hsl(var(--f5-orange))] rounded-full blur-[128px]" />
       </div>
+      
+      {/* Additional gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1a0e0a]/40 via-transparent to-[#2d1510]/40 pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16 px-4">

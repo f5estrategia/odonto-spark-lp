@@ -58,8 +58,20 @@ const ResultsSection = () => {
   }, []);
 
   return (
-    <section id="resultados" className="py-24 bg-[hsl(var(--luxury-black))] relative">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="resultados" className="py-24 bg-[hsl(var(--luxury-black))] relative overflow-hidden">
+      {/* Background with gradient - Like Hero */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a0e0a] via-[#2d1510] to-[#1a0e0a]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[hsl(var(--f5-orange))]/10 to-transparent" />
+        
+        {/* Floating elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-[40%] left-[5%] w-[400px] h-[400px] rounded-full bg-[hsl(var(--f5-orange))]/25 blur-[120px] animate-float" style={{ animationDelay: "1s" }} />
+          <div className="absolute bottom-[20%] right-[10%] w-[350px] h-[350px] rounded-full bg-[hsl(var(--f5-orange))]/20 blur-[100px] animate-float" style={{ animationDelay: "3s" }} />
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
             Você Quer Promessas ou Quer Provas?
