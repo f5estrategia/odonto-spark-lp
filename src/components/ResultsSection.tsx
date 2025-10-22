@@ -281,10 +281,10 @@ const ResultsSection = () => {
           {/* Carousel Container */}
           <div className="relative max-w-5xl mx-auto px-4 md:px-8">
             <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex gap-3 md:gap-4">
+              <div className="flex gap-4">
                 {/* Video 1 */}
                 <div className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-12px)] min-w-0">
-                  <div id="ifr_68f7e3478ea58bfe7173c5b5_wrapper" className="w-full">
+                  <div id="ifr_68f7e3478ea58bfe7173c5b5_wrapper" className="w-full rounded-2xl overflow-hidden">
                     <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7e3478ea58bfe7173c5b5_aspect">
                       <iframe 
                         frameBorder="0" 
@@ -306,7 +306,7 @@ const ResultsSection = () => {
 
                 {/* Video 2 */}
                 <div className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-12px)] min-w-0">
-                  <div id="ifr_68f7dee38ea58bfe7173c072_wrapper" className="w-full">
+                  <div id="ifr_68f7dee38ea58bfe7173c072_wrapper" className="w-full rounded-2xl overflow-hidden">
                     <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7dee38ea58bfe7173c072_aspect">
                       <iframe 
                         frameBorder="0" 
@@ -328,7 +328,7 @@ const ResultsSection = () => {
 
                 {/* Video 3 */}
                 <div className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-12px)] min-w-0">
-                  <div id="ifr_68f7d9cbc9a120c812a9e6a7_wrapper" className="w-full">
+                  <div id="ifr_68f7d9cbc9a120c812a9e6a7_wrapper" className="w-full rounded-2xl overflow-hidden">
                     <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7d9cbc9a120c812a9e6a7_aspect">
                       <iframe 
                         frameBorder="0" 
@@ -350,7 +350,7 @@ const ResultsSection = () => {
 
                 {/* Video 4 */}
                 <div className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-12px)] min-w-0">
-                  <div id="ifr_68f7d9ef21b0a6afaf4cc36c_wrapper" className="w-full">
+                  <div id="ifr_68f7d9ef21b0a6afaf4cc36c_wrapper" className="w-full rounded-2xl overflow-hidden">
                     <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7d9ef21b0a6afaf4cc36c_aspect">
                       <iframe 
                         frameBorder="0" 
@@ -372,7 +372,7 @@ const ResultsSection = () => {
 
                 {/* Video 5 */}
                 <div className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-12px)] min-w-0">
-                  <div id="ifr_68f7df118ea58bfe7173c0b0_wrapper" className="w-full">
+                  <div id="ifr_68f7df118ea58bfe7173c0b0_wrapper" className="w-full rounded-2xl overflow-hidden">
                     <div style={{ position: 'relative', padding: '177.77777777777777% 0 0 0' }} id="ifr_68f7df118ea58bfe7173c0b0_aspect">
                       <iframe 
                         frameBorder="0" 
@@ -394,7 +394,7 @@ const ResultsSection = () => {
 
                 {/* Video 6 */}
                 <div className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-12px)] min-w-0">
-                  <div id="ifr_68f7ebffa1ac75e611ca004b_wrapper" className="w-full">
+                  <div id="ifr_68f7ebffa1ac75e611ca004b_wrapper" className="w-full rounded-2xl overflow-hidden">
                     <div style={{ position: 'relative', padding: '56.25% 0 0 0' }} id="ifr_68f7ebffa1ac75e611ca004b_aspect">
                       <iframe 
                         frameBorder="0" 
