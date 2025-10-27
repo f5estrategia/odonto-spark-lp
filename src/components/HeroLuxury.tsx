@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useEffect } from "react";
 
 const HeroLuxury = () => {
   const scrollToForm = () => {
@@ -10,6 +11,19 @@ const HeroLuxury = () => {
       window.scrollTo({ top: targetPosition, behavior: "smooth" });
     }
   };
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68dde6f34641b9b22f3e764d/v4/player.js";
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
 
   return (
     <section className="relative min-h-screen pt-[180px] pb-24 overflow-hidden">
