@@ -76,11 +76,11 @@ const ToolsSection = () => {
                 {/* Icon */}
                 <div className="mb-6 relative flex items-center justify-start h-16">
                   {tool.icon === "google" ? (
-                    <img src={googleAdsIcon} alt="Google Ads" className="h-14 md:h-16 w-auto object-contain" />
+                    <img src={googleAdsIcon} alt="Google Ads" className="h-14 md:h-16 w-auto object-contain" width="64" height="64" loading="lazy" />
                   ) : tool.icon === "meta" ? (
-                    <img src={metaIcon} alt="Meta" className="h-12 md:h-14 w-auto object-contain" />
+                    <img src={metaIcon} alt="Meta" className="h-12 md:h-14 w-auto object-contain" width="56" height="56" loading="lazy" />
                   ) : tool.icon === "rd" ? (
-                    <img src={rdStationIcon} alt="RD Station" className="h-12 md:h-14 w-auto object-contain" />
+                    <img src={rdStationIcon} alt="RD Station" className="h-12 md:h-14 w-auto object-contain" width="56" height="56" loading="lazy" />
                   ) : null}
                 </div>
 

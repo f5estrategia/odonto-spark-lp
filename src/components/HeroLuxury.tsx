@@ -13,17 +13,30 @@ const HeroLuxury = () => {
   };
 
   useEffect(() => {
-    // Load VTurb video script
-    const script = document.createElement("script");
-    script.src = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68dde6f34641b9b22f3e764d/v4/player.js";
-    script.async = true;
-    document.head.appendChild(script);
+    // Load VTurb video player script with Intersection Observer for better performance
+    const videoContainer = document.querySelector('vturb-smartplayer[id*="vid"]');
+    
+    if (!videoContainer) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Load script only when video container is visible
+          const script = document.createElement("script");
+          script.src = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68dde6f34641b9b22f3e764d/player.js";
+          script.async = true;
+          script.defer = true;
+          document.head.appendChild(script);
+          
+          observer.disconnect();
+        }
+      });
+    }, { rootMargin: '50px' });
+
+    observer.observe(videoContainer);
 
     return () => {
-      // Cleanup script on unmount
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
+      observer.disconnect();
     };
   }, []);
 

@@ -1,13 +1,16 @@
+import { Suspense, lazy } from "react";
 import Header from "@/components/Header";
 import HeroLuxury from "@/components/HeroLuxury";
 import SocialProofBar from "@/components/SocialProofBar";
-import PainPoints from "@/components/PainPoints";
-import Methodology from "@/components/Methodology";
-import ToolsSection from "@/components/ToolsSection";
-import ResultsSection from "@/components/ResultsSection";
-import DifferentialsSection from "@/components/DifferentialsSection";
-import FinalCTA from "@/components/FinalCTA";
-import Footer from "@/components/Footer";
+
+// Lazy load components below the fold for better initial page load
+const PainPoints = lazy(() => import("@/components/PainPoints"));
+const Methodology = lazy(() => import("@/components/Methodology"));
+const ToolsSection = lazy(() => import("@/components/ToolsSection"));
+const ResultsSection = lazy(() => import("@/components/ResultsSection"));
+const DifferentialsSection = lazy(() => import("@/components/DifferentialsSection"));
+const FinalCTA = lazy(() => import("@/components/FinalCTA"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   return (
@@ -15,13 +18,15 @@ const Index = () => {
       <Header />
       <HeroLuxury />
       <SocialProofBar />
-      <ResultsSection />
-      <PainPoints />
-      <Methodology />
-      <ToolsSection />
-      <DifferentialsSection />
-      <FinalCTA />
-      <Footer />
+      <Suspense fallback={<div className="min-h-[200px]" />}>
+        <ResultsSection />
+        <PainPoints />
+        <Methodology />
+        <ToolsSection />
+        <DifferentialsSection />
+        <FinalCTA />
+        <Footer />
+      </Suspense>
     </div>
   );
 };

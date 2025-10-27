@@ -53,7 +53,7 @@ const Header = () => {
           <div className="flex items-center justify-between h-[100px]">
             {/* Logo */}
             <div className="flex items-center">
-              <img src={f5Logo} alt="f5 logo" className="h-14 w-auto" />
+              <img src={f5Logo} alt="f5 logo" className="h-14 w-auto" width="140" height="56" loading="eager" />
             </div>
 
             {/* Desktop Navigation */}

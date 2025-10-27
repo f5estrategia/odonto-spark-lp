@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={f5Logo} alt="f5 logo" className="h-12 w-auto" />
+              <img src={f5Logo} alt="f5 logo" className="h-12 w-auto" width="120" height="48" loading="lazy" />
               <span className="text-xl font-bold text-white">estratégia</span>
             </div>
             <p className="text-sm text-[hsl(var(--text-secondary))] leading-relaxed">

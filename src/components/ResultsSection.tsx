@@ -77,6 +77,9 @@ const ResultsSection = () => {
                 src={viviaOdontoImage}
                 alt="Viva Odontologia"
                 className="w-full h-full object-cover opacity-70 hover:scale-110 hover:opacity-90 transition-all duration-500"
+                width="800"
+                height="256"
+                loading="lazy"
               />
             </div>
 
@@ -118,6 +121,9 @@ const ResultsSection = () => {
                 src={oralUnicVilaMarianaImage}
                 alt="Oral Unic Vila Mariana"
                 className="w-full h-full object-cover opacity-70 hover:scale-110 hover:opacity-90 transition-all duration-500"
+                width="600"
+                height="192"
+                loading="lazy"
               />
               <div className="absolute top-4 right-4 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
                 🏆
@@ -152,6 +158,9 @@ const ResultsSection = () => {
                 src={oralUnicJoaoPessoaImage}
                 alt="Oral Unic João Pessoa"
                 className="w-full h-full object-cover opacity-70 hover:scale-110 hover:opacity-90 transition-all duration-500"
+                width="600"
+                height="192"
+                loading="lazy"
               />
               <div className="absolute top-4 right-4 bg-gradient-to-r from-[hsl(var(--f5-orange))] to-[hsl(var(--f5-orange-dark))] text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
                 🏆

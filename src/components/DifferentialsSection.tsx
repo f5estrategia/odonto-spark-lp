@@ -30,9 +30,9 @@ const DifferentialsSection = () => {
         <div className="flex justify-center items-center my-16 md:my-24 relative min-h-[400px] md:min-h-[600px]">
           {/* Center Logos */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center gap-3 md:gap-4">
-            <img src={f5LogoWhite} alt="f5 estratégia" className="h-8 md:h-12 w-auto drop-shadow-[0_0_20px_hsl(var(--f5-orange)/0.6)]" />
+            <img src={f5LogoWhite} alt="f5 estratégia" className="h-8 md:h-12 w-auto drop-shadow-[0_0_20px_hsl(var(--f5-orange)/0.6)]" width="96" height="32" loading="lazy" />
             <div className="h-px w-12 md:w-16 bg-[hsl(var(--f5-orange))]/40" />
-            <img src={primeLogo} alt="Prime Franchising Solutions" className="h-8 md:h-12 w-auto drop-shadow-[0_0_20px_hsl(var(--f5-orange)/0.4)]" />
+            <img src={primeLogo} alt="Prime Franchising Solutions" className="h-8 md:h-12 w-auto drop-shadow-[0_0_20px_hsl(var(--f5-orange)/0.4)]" width="96" height="32" loading="lazy" />
           </div>
 
           {/* Orbiting Items - Positioned in a circle */}
@@ -77,6 +77,9 @@ const DifferentialsSection = () => {
                 src={fernandoMachado}
                 alt="Fernando Machado - CEO"
                 className="w-full h-auto object-cover rounded-3xl"
+                width="600"
+                height="800"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--luxury-black))]/60 via-transparent to-transparent rounded-3xl" />
               

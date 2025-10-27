@@ -29,7 +29,10 @@ const SocialProofBar = () => {
                 <img 
                   src={logo.src} 
                   alt={logo.alt} 
-                  className="h-10 md:h-12 lg:h-14 w-auto object-contain opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 hover:scale-110" 
+                  className="h-10 md:h-12 lg:h-14 w-auto object-contain opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 hover:scale-110"
+                  width="150"
+                  height="56"
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -39,7 +42,10 @@ const SocialProofBar = () => {
                 <img 
                   src={logo.src} 
                   alt={logo.alt} 
-                  className="h-10 md:h-12 lg:h-14 w-auto object-contain opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 hover:scale-110" 
+                  className="h-10 md:h-12 lg:h-14 w-auto object-contain opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 hover:scale-110"
+                  width="150"
+                  height="56"
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -49,7 +55,10 @@ const SocialProofBar = () => {
                 <img 
                   src={logo.src} 
                   alt={logo.alt} 
-                  className="h-10 md:h-12 lg:h-14 w-auto object-contain opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 hover:scale-110" 
+                  className="h-10 md:h-12 lg:h-14 w-auto object-contain opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 hover:scale-110"
+                  width="150"
+                  height="56"
+                  loading="lazy"
                 />
               </div>
             ))}

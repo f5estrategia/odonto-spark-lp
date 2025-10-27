@@ -234,16 +234,25 @@ const FinalCTA = () => {
                   src={googlePartnerBadge}
                   alt="Google Partner"
                   className="h-8 md:h-9 w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-300"
+                  width="120"
+                  height="36"
+                  loading="lazy"
                 />
                 <img
                   src={metaPartnerBadge}
                   alt="Meta Business Partner"
                   className="h-8 md:h-9 w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-300"
+                  width="120"
+                  height="36"
+                  loading="lazy"
                 />
                 <img
                   src={rdPartnerBadge}
                   alt="RD Station Partner"
                   className="h-7 md:h-8 w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-300"
+                  width="100"
+                  height="32"
+                  loading="lazy"
                 />
               </div>
             </div>
