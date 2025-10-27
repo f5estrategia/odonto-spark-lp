@@ -48,6 +48,15 @@
     <!-- End Google Tag Manager (noscript) -->
     
     <div id="root"></div>
+    
+    <!-- VTurb Player Script - Must load before React -->
+    <script type="text/javascript">
+      var s=document.createElement("script");
+      s.src="https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68dde6f34641b9b22f3e764d/v4/player.js";
+      s.async=false;
+      document.head.appendChild(s);
+    </script>
+    
     <script type="module" src="/src/main.tsx"></script>
     
     <!-- Microsoft Clarity - Load after page content -->
