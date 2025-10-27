@@ -13,16 +13,15 @@ const HeroLuxury = () => {
   };
 
   useEffect(() => {
-    // Load VTurb video player script - must load immediately as it's above the fold
+    // Load VTurb video player script
     const script = document.createElement("script");
     script.src = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68dde6f34641b9b22f3e764d/player.js";
     script.async = true;
-    script.defer = true;
     document.head.appendChild(script);
 
     return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
       }
     };
   }, []);
