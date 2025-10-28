@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
@@ -20,6 +21,7 @@ const formSchema = z.object({
   email: z.string().trim().email("Email inválido"),
   telefone: z.string().trim().min(10, "WhatsApp deve ter no mínimo 10 dígitos"),
   clinica: z.string().trim().min(1, "Nome da clínica é obrigatório"),
+  investimento: z.string().min(1, "Selecione um valor de investimento"),
   resultados: z.string().trim().min(1, "Este campo é obrigatório"),
 });
 
@@ -30,6 +32,7 @@ const FinalCTA = () => {
     telefone: "",
     telefoneDisplay: "", // Para exibição formatada
     clinica: "",
+    investimento: "",
     resultados: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -87,6 +90,7 @@ const FinalCTA = () => {
         telefone: validatedData.telefone,
         campos_personalizado: { 
           nome_clinica: validatedData.clinica,
+          investimento_pretendido: validatedData.investimento,
           resultados_desejados: validatedData.resultados,
           origem_formulario: 'Sessão Estratégica'
         },
@@ -132,7 +136,7 @@ const FinalCTA = () => {
         description: "Nossa equipe entrará em contato em até 2 horas úteis.",
       });
 
-      setFormData({ nome: "", email: "", telefone: "", telefoneDisplay: "", clinica: "", resultados: "" });
+      setFormData({ nome: "", email: "", telefone: "", telefoneDisplay: "", clinica: "", investimento: "", resultados: "" });
 
       // Disparar evento para GTM/Pixel
       if ((window as any).dataLayer) {
@@ -338,6 +342,35 @@ const FinalCTA = () => {
                 >
                   Nome da Clínica
                 </label>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="investimento" className="text-xs md:text-sm text-[hsl(var(--text-secondary))] block">
+                  Quanto você pretende investir em campanhas?
+                </label>
+                <Select
+                  value={formData.investimento}
+                  onValueChange={(value) => setFormData({ ...formData, investimento: value })}
+                  required
+                >
+                  <SelectTrigger className="w-full bg-[hsl(var(--luxury-gray))] border border-white/10 rounded-lg md:rounded-xl px-3 md:px-4 py-3 md:py-4 text-sm md:text-base text-white focus:outline-none focus:border-[hsl(var(--f5-orange))] focus:ring-2 focus:ring-[hsl(var(--f5-orange))]/20 transition-colors">
+                    <SelectValue placeholder="Selecione uma faixa de investimento" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-[hsl(var(--luxury-dark))] border border-white/10 text-white">
+                    <SelectItem value="menos-1500" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
+                      Menos de R$ 1.500,00
+                    </SelectItem>
+                    <SelectItem value="1500-5000" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
+                      Entre R$ 1.500,00 e R$ 5.000,00
+                    </SelectItem>
+                    <SelectItem value="5000-10000" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
+                      Entre R$ 5.000,00 e R$ 10.000,00
+                    </SelectItem>
+                    <SelectItem value="acima-10000" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
+                      Acima de R$ 10.000,00
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
 
               <div>
