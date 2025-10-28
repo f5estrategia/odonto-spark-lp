@@ -357,16 +357,16 @@ const FinalCTA = () => {
                     <SelectValue placeholder="Selecione uma faixa de investimento" />
                   </SelectTrigger>
                   <SelectContent className="bg-[hsl(var(--luxury-dark))] border border-white/10 text-white">
-                    <SelectItem value="menos-1500" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
+                    <SelectItem value="Menos de R$ 1.500,00" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
                       Menos de R$ 1.500,00
                     </SelectItem>
-                    <SelectItem value="1500-5000" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
+                    <SelectItem value="Entre R$ 1.500,00 e R$ 5.000,00" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
                       Entre R$ 1.500,00 e R$ 5.000,00
                     </SelectItem>
-                    <SelectItem value="5000-10000" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
+                    <SelectItem value="Entre R$ 5.000,00 e R$ 10.000,00" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
                       Entre R$ 5.000,00 e R$ 10.000,00
                     </SelectItem>
-                    <SelectItem value="acima-10000" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
+                    <SelectItem value="Acima de R$ 10.000,00" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
                       Acima de R$ 10.000,00
                     </SelectItem>
                   </SelectContent>
