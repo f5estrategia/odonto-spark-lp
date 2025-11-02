@@ -49,8 +49,8 @@ const HeroLuxury = () => {
               <span className="block text-base md:text-lg font-semibold text-white/90 uppercase tracking-[3px] mb-6 leading-relaxed">
                 A agência especializada em entregar o que sua clínica mais precisa:
               </span>
-              <span className="block text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-white via-white to-white/95 bg-clip-text text-transparent mb-6 leading-[1.1] tracking-tight drop-shadow-[0_4px_60px_rgba(255,255,255,0.3)]">
-                VENDER <span className="bg-gradient-to-r from-[hsl(var(--f5-orange))] via-orange-400 to-[hsl(var(--f5-orange-dark))] bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(255,99,71,0.6)]">MAIS</span>
+              <span className="block text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-[1.1] tracking-tight">
+                <span className="bg-gradient-to-r from-[hsl(var(--f5-orange))] via-orange-400 to-[hsl(var(--f5-orange-dark))] bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(255,99,71,0.6)]">VENDER</span> <span className="relative inline-block bg-gradient-to-r from-white via-white to-white/95 bg-clip-text text-transparent drop-shadow-[0_4px_60px_rgba(255,255,255,0.4)]">MAIS<span className="absolute bottom-0 left-0 w-full h-[6px] md:h-[8px] bg-gradient-to-r from-[hsl(var(--f5-orange))] to-orange-400 blur-[2px] opacity-80"></span><span className="absolute bottom-0 left-0 w-full h-[4px] md:h-[6px] bg-gradient-to-r from-[hsl(var(--f5-orange))] to-orange-400"></span></span>
               </span>
             </h1>
 
