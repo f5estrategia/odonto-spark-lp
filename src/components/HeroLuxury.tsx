@@ -45,16 +45,16 @@ const HeroLuxury = () => {
         <div className="max-w-6xl mx-auto">
           {/* Headline & Text - Original Copy */}
           <div className="text-center animate-fade-in-up mb-16">
-            <h1 className="mb-8">
-              <span className="block text-sm md:text-base font-medium text-white uppercase tracking-[2px] mb-4">
+            <h1 className="mb-10">
+              <span className="block text-base md:text-lg font-semibold text-white/90 uppercase tracking-[3px] mb-6 leading-relaxed">
                 A agência especializada em entregar o que sua clínica mais precisa:
               </span>
-              <span className="block text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-[hsl(var(--f5-orange))] via-orange-400 to-[hsl(var(--f5-orange-dark))] bg-clip-text text-transparent mb-4 drop-shadow-[0_0_30px_rgba(255,99,71,0.5)]">
-                VENDER MAIS
+              <span className="block text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-white via-white to-white/95 bg-clip-text text-transparent mb-6 leading-[1.1] tracking-tight drop-shadow-[0_4px_60px_rgba(255,255,255,0.3)]">
+                VENDER <span className="bg-gradient-to-r from-[hsl(var(--f5-orange))] via-orange-400 to-[hsl(var(--f5-orange-dark))] bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(255,99,71,0.6)]">MAIS</span>
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 max-w-5xl mx-auto leading-relaxed font-light tracking-wide">
               Transformamos clínicas odontológicas que faturam <strong className="text-white font-bold">R$30-50k/mês</strong> em operações de <strong className="text-[hsl(var(--f5-orange))] font-bold">R$250k+</strong> — com sistema completo de vendas: do lead qualificado até o fechamento de alto ticket.
             </p>
           </div>
