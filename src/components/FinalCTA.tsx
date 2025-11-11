@@ -231,31 +231,36 @@ const FinalCTA = () => {
             </div>
 
             {/* Partner Badges */}
-            <div className="p-5 md:p-6 bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] border border-white/10 rounded-2xl shadow-xl">
-              <p className="text-white font-semibold text-xs md:text-sm mb-4 text-center">Parceiros Oficiais</p>
-              <div className="flex items-center justify-center gap-6 md:gap-8 flex-wrap">
+            <div className="relative p-8 md:p-10 bg-gradient-to-br from-[#1a1a1a] via-[#1f1f1f] to-[#151515] border border-white/20 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden">
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--f5-orange))]/5 via-transparent to-transparent pointer-events-none" />
+              
+              <p className="text-white/90 font-medium text-sm md:text-base mb-8 text-center tracking-wide relative z-10">
+                Parceiros Oficiais:
+              </p>
+              <div className="flex items-center justify-center gap-8 md:gap-12 flex-wrap relative z-10">
                 <img
                   src={googlePartnerBadge}
                   alt="Google Partner"
-                  className="h-8 md:h-9 w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-300"
+                  className="h-10 md:h-12 w-auto object-contain opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300 filter drop-shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
                   width="120"
-                  height="36"
+                  height="48"
                   loading="lazy"
                 />
                 <img
                   src={metaPartnerBadge}
                   alt="Meta Business Partner"
-                  className="h-8 md:h-9 w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-300"
+                  className="h-10 md:h-12 w-auto object-contain opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300 filter drop-shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
                   width="120"
-                  height="36"
+                  height="48"
                   loading="lazy"
                 />
                 <img
                   src={rdPartnerBadge}
                   alt="RD Station Partner"
-                  className="h-7 md:h-8 w-auto object-contain opacity-85 hover:opacity-100 hover:scale-105 transition-all duration-300"
+                  className="h-9 md:h-11 w-auto object-contain opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300 filter drop-shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
                   width="100"
-                  height="32"
+                  height="44"
                   loading="lazy"
                 />
               </div>
