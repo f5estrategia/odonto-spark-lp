@@ -1,20 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from "@supabase/supabase-js";
 import googlePartnerBadge from "@/assets/google-partner-badge.png";
 import metaPartnerBadge from "@/assets/meta-partner-badge.png";
 import rdPartnerBadge from "@/assets/rd-partner-badge.png";
 
 // Configure Supabase
 const supabase = createClient(
-  'https://imotgvapfkebngteuccf.supabase.co',
-  'sb_publishable_mi9bRUedT95_q2oGRMaZ8w_Xqvm4_zV'
+  "https://imotgvapfkebngteuccf.supabase.co",
+  "sb_publishable_mi9bRUedT95_q2oGRMaZ8w_Xqvm4_zV",
 );
+
+// ✏️ MUDANÇA 1 — URL real do webhook do CRM (com ?token= já incluso)
+const WEBHOOK_URL =
+  "https://crmhomologacao.mbmtecnologia.com.br/api/v1/webhook/inbound/cmolmaz0x000fj1ak55oq0xht?token=4B5Br9dx0-xScNdB_y0V2Nz0CH7k8P8V";
+
+// Lista de chaves UTM que serão persistidas
+const UTM_KEYS = [
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+  "utm_adgroup",
+  "posicionamento",
+] as const;
 
 const formSchema = z.object({
   nome: z.string().trim().min(1, "Nome é obrigatório"),
@@ -25,12 +40,29 @@ const formSchema = z.object({
   resultados: z.string().trim().min(1, "Este campo é obrigatório"),
 });
 
+const persistirUTMs = () => {
+  const params = new URLSearchParams(window.location.search);
+  UTM_KEYS.forEach((key) => {
+    const valorURL = params.get(key);
+    if (valorURL) sessionStorage.setItem(`f5_${key}`, valorURL);
+  });
+};
+
+const recuperarUTMs = () => {
+  const params = new URLSearchParams(window.location.search);
+  const utms: Record<string, string> = {};
+  UTM_KEYS.forEach((key) => {
+    utms[key] = sessionStorage.getItem(`f5_${key}`) || params.get(key) || "";
+  });
+  return utms;
+};
+
 const FinalCTA = () => {
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
     telefone: "",
-    telefoneDisplay: "", // Para exibição formatada
+    telefoneDisplay: "",
     clinica: "",
     investimento: "",
     resultados: "",
@@ -38,29 +70,43 @@ const FinalCTA = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // Formatar telefone visualmente
+  useEffect(() => {
+    persistirUTMs();
+  }, []);
+
   const formatarTelefone = (valor: string) => {
-    // Remove tudo que não é número
-    const numeros = valor.replace(/\D/g, '');
-    
-    // Aplica a máscara
+    const numeros = valor.replace(/\D/g, "");
     if (numeros.length <= 10) {
-      // Formato: (99) 9999-9999
-      return numeros.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
-    } else {
-      // Formato: (99) 99999-9999
-      return numeros.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
+      return numeros.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, "($1) $2-$3");
     }
+    return numeros.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, "($1) $2-$3");
   };
 
   const capturarIP = async () => {
     try {
-      const res = await fetch('https://api.ipify.org?format=json');
+      const res = await fetch("https://api.ipify.org?format=json");
       const data = await res.json();
       return data.ip;
-    } catch (e) {
-      console.error('Erro ao capturar IP:', e);
-      return '';
+    } catch {
+      return "";
+    }
+  };
+
+  // 📤 Envio para o webhook do CRM (não bloqueia o fluxo principal)
+  const enviarParaWebhook = async (dados: Record<string, unknown>) => {
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dados),
+      });
+      if (!response.ok) {
+        console.error("Webhook respondeu com erro:", response.status, await response.text());
+      } else {
+        console.log("✅ Webhook CRM enviado com sucesso");
+      }
+    } catch (webhookError) {
+      console.error("Erro ao enviar para webhook:", webhookError);
     }
   };
 
@@ -69,84 +115,113 @@ const FinalCTA = () => {
     setIsSubmitting(true);
 
     try {
-      // Validar dados
       const validatedData = formSchema.parse(formData);
+      const utms = recuperarUTMs();
 
-      // Capturar UTMs da URL
-      const params = new URLSearchParams(window.location.search);
-      
-      // Capturar IP do usuário
       const ipUsuario = await capturarIP();
-
-      // Capturar dados do dispositivo/navegador
       const userAgent = navigator.userAgent;
-      const dispositivo = /Mobile|Android|iPhone/i.test(userAgent) ? 'Mobile' : 'Desktop';
+      const dispositivo = /Mobile|Android|iPhone/i.test(userAgent) ? "Mobile" : "Desktop";
 
-      // Montar objeto completo
-      const dadosLead = {
-        // Dados do formulário
+      // ✏️ MUDANÇA 2 — Payload do CRM: campos canônicos PROMOVIDOS pra raiz.
+      // O extractor do CRM lê só chaves de primeiro nível pra mapear pra
+      // Lead/Company. Os campos extras seguem aninhados em
+      // `campos_personalizado` e viram metadata/descrição no negócio.
+      const payloadCRM = {
+        // Canônicos (raiz) — extractor casa via aliases default
         nome: validatedData.nome,
         email: validatedData.email,
-        telefone: validatedData.telefone,
-        campos_personalizado: { 
-          nome_clinica: validatedData.clinica,
-          investimento_pretendido: validatedData.investimento,
-          resultados_desejados: validatedData.resultados,
-          origem_formulario: 'Sessão Estratégica'
-        },
-        politicas_privacidade: true,
-        
-        // UTMs
-        utm_source: params.get('utm_source') || '',
-        utm_medium: params.get('utm_medium') || '',
-        utm_campaign: params.get('utm_campaign') || '',
-        utm_term: params.get('utm_term') || '',
-        utm_content: params.get('utm_content') || '',
-        utm_adgroup: params.get('utm_adgroup') || '',
-        
-        // Identificadores
-        nome_formulario: 'Formulário F5 Odonto',
-        id_formulario: 'form-f5-principal',
+        telefone: validatedData.telefone, // só dígitos: 11987654321 → CRM normaliza pra 5511987654321
+        clinica: validatedData.clinica, // → vira Company.name (cria/casa)
+
+        // UTMs — convenção fixa do CRM, viram campaignName/adSetName/sourceId
+        utm_source: utms.utm_source,
+        utm_medium: utms.utm_medium,
+        utm_campaign: utms.utm_campaign,
+        utm_term: utms.utm_term,
+        utm_content: utms.utm_content,
+        utm_adgroup: utms.utm_adgroup,
+        posicionamento: utms.posicionamento,
+
+        // Campos do formulário que NÃO são canônicos — vão pra description do
+        // negócio + metadata do LeadEvent. Mantém o snake_case usado.
+        investimento_pretendido: validatedData.investimento,
+        resultados_desejados: validatedData.resultados,
+        origem_formulario: "Sessão Estratégica",
+
+        // Identificadores e dados técnicos (também viram metadata)
+        nome_formulario: "Formulário F5 Odonto",
+        id_formulario: "form-f5-principal",
         id_pagina: window.location.pathname,
-        
-        // Origem e navegação
-        referral_source: document.referrer || 'Direto',
+        referral_source: document.referrer || "Direto",
         url_conversao: window.location.href,
-        
-        // Dados técnicos
         dispositivo,
         user_agent: userAgent,
         ip_usuario: ipUsuario,
-        
-        // Timestamp
+        data_conversao: new Date().toISOString(),
+      };
+
+      // ✏️ MUDANÇA 3 — Payload do Supabase: estrutura original preservada
+      // (não mexer pra não quebrar relatórios/dashboards já existentes lá).
+      const dadosLeadSupabase = {
+        nome: validatedData.nome,
+        email: validatedData.email,
+        telefone: validatedData.telefone,
+        campos_personalizado: {
+          nome_clinica: validatedData.clinica,
+          investimento_pretendido: validatedData.investimento,
+          resultados_desejados: validatedData.resultados,
+          origem_formulario: "Sessão Estratégica",
+        },
+        politicas_privacidade: true,
+        utm_source: utms.utm_source,
+        utm_medium: utms.utm_medium,
+        utm_campaign: utms.utm_campaign,
+        utm_term: utms.utm_term,
+        utm_content: utms.utm_content,
+        utm_adgroup: utms.utm_adgroup,
+        posicionamento: utms.posicionamento,
+        nome_formulario: "Formulário F5 Odonto",
+        id_formulario: "form-f5-principal",
+        id_pagina: window.location.pathname,
+        referral_source: document.referrer || "Direto",
+        url_conversao: window.location.href,
+        dispositivo,
+        user_agent: userAgent,
+        ip_usuario: ipUsuario,
         data_conversao: new Date().toISOString(),
         received_at: new Date().toISOString(),
       };
 
-      // Insert direto no Supabase (sem Edge Function)
-      const { data, error } = await supabase
-        .from('leads')
-        .insert([dadosLead])
-        .select();
-
+      // 1️⃣ Insert no Supabase (estrutura original)
+      const { error } = await supabase.from("leads").insert([dadosLeadSupabase]).select();
       if (error) throw error;
+
+      // 2️⃣ Envio paralelo ao webhook do CRM (não bloqueia, não trava se falhar)
+      enviarParaWebhook(payloadCRM);
 
       toast({
         title: "Recebemos seu contato!",
         description: "Nossa equipe entrará em contato em até 2 horas úteis.",
       });
 
-      setFormData({ nome: "", email: "", telefone: "", telefoneDisplay: "", clinica: "", investimento: "", resultados: "" });
+      setFormData({
+        nome: "",
+        email: "",
+        telefone: "",
+        telefoneDisplay: "",
+        clinica: "",
+        investimento: "",
+        resultados: "",
+      });
 
-      // Disparar evento para GTM/Pixel
+      // GTM/Pixel
       if ((window as any).dataLayer) {
         (window as any).dataLayer.push({
-          event: 'form_submission',
-          formId: 'form-f5-principal',
-          email: validatedData.email
+          event: "form_submission",
+          formId: "form-f5-principal",
+          email: validatedData.email,
         });
       }
-
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast({
@@ -155,7 +230,7 @@ const FinalCTA = () => {
           variant: "destructive",
         });
       } else {
-        console.error('Erro ao enviar:', error);
+        console.error("Erro ao enviar:", error);
         toast({
           title: "Erro ao enviar",
           description: "Tente novamente em alguns instantes.",
@@ -169,17 +244,13 @@ const FinalCTA = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    
-    if (name === 'telefone') {
-      // Remove caracteres não numéricos para armazenar
-      const apenasNumeros = value.replace(/\D/g, '');
-      // Formata para exibição
+    if (name === "telefone") {
+      const apenasNumeros = value.replace(/\D/g, "");
       const valorFormatado = formatarTelefone(value);
-      
-      setFormData({ 
-        ...formData, 
+      setFormData({
+        ...formData,
         telefone: apenasNumeros,
-        telefoneDisplay: valorFormatado
+        telefoneDisplay: valorFormatado,
       });
     } else {
       setFormData({ ...formData, [name]: value });
@@ -188,32 +259,33 @@ const FinalCTA = () => {
 
   return (
     <section id="contato" className="py-16 md:py-24 bg-[hsl(var(--luxury-black))] relative overflow-hidden">
-      {/* Background with gradient - Like Hero */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a0e0a] via-[#2d1510] to-[#1a0e0a]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--f5-orange))]/20 via-transparent to-transparent" />
-        
-        {/* Floating elements */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[30%] left-[15%] w-[400px] h-[400px] rounded-full bg-[hsl(var(--f5-orange))]/30 blur-[110px] animate-float" style={{ animationDelay: "0s" }} />
-          <div className="absolute bottom-[20%] right-[10%] w-[350px] h-[350px] rounded-full bg-[hsl(var(--f5-orange))]/25 blur-[100px] animate-float" style={{ animationDelay: "5s" }} />
+          <div
+            className="absolute top-[30%] left-[15%] w-[400px] h-[400px] rounded-full bg-[hsl(var(--f5-orange))]/30 blur-[110px] animate-float"
+            style={{ animationDelay: "0s" }}
+          />
+          <div
+            className="absolute bottom-[20%] right-[10%] w-[350px] h-[350px] rounded-full bg-[hsl(var(--f5-orange))]/25 blur-[100px] animate-float"
+            style={{ animationDelay: "5s" }}
+          />
         </div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Header Section */}
         <div className="text-center mb-8 md:mb-12 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
             Pronto para transformar seu marketing no seu maior vendedor?
           </h2>
           <p className="text-base md:text-lg text-[hsl(var(--text-secondary))] leading-relaxed">
-            Agende uma sessão de diagnóstico gratuita. Você vai sair com um plano de ação claro para sua clínica, mesmo que decida não trabalhar conosco.
+            Agende uma sessão de diagnóstico gratuita. Você vai sair com um plano de ação claro para sua clínica, mesmo
+            que decida não trabalhar conosco.
           </p>
         </div>
 
-        {/* Main Content Grid */}
         <div className="grid lg:grid-cols-[1fr_480px] gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
-          {/* Left - Benefits */}
           <div className="order-2 lg:order-1 space-y-6 md:space-y-8">
             <div className="space-y-3 md:space-y-4">
               <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">O que você vai receber:</h3>
@@ -223,18 +295,18 @@ const FinalCTA = () => {
                 "Plano de ação personalizado para sua clínica",
                 "Sem compromisso - 100% gratuito",
               ].map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3 bg-[hsl(var(--luxury-dark))]/50 border border-white/5 rounded-xl p-4 hover:border-[hsl(var(--f5-orange))]/30 transition-all duration-300">
+                <div
+                  key={index}
+                  className="flex items-start gap-3 bg-[hsl(var(--luxury-dark))]/50 border border-white/5 rounded-xl p-4 hover:border-[hsl(var(--f5-orange))]/30 transition-all duration-300"
+                >
                   <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-[hsl(var(--f5-orange))] flex-shrink-0 mt-0.5" />
                   <span className="text-sm md:text-base text-[hsl(var(--text-secondary))]">{benefit}</span>
                 </div>
               ))}
             </div>
 
-            {/* Partner Badges */}
             <div className="relative p-8 md:p-10 bg-gradient-to-br from-[#1a1a1a] via-[#1f1f1f] to-[#151515] border border-white/20 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden">
-              {/* Subtle glow effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--f5-orange))]/5 via-transparent to-transparent pointer-events-none" />
-              
               <p className="text-white/90 font-medium text-sm md:text-base mb-8 text-center tracking-wide relative z-10">
                 Parceiros Oficiais:
               </p>
@@ -267,9 +339,10 @@ const FinalCTA = () => {
             </div>
           </div>
 
-          {/* Right - Form - Aparece primeiro em mobile */}
           <div className="order-1 lg:order-2 bg-gradient-to-br from-[hsl(var(--luxury-dark))] to-[hsl(var(--luxury-black))] border border-white/10 rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-2xl sticky top-24">
-            <h3 className="text-lg md:text-xl font-bold text-white mb-5 md:mb-6 text-center">Agende sua Sessão Estratégica</h3>
+            <h3 className="text-lg md:text-xl font-bold text-white mb-5 md:mb-6 text-center">
+              Agende sua Sessão Estratégica
+            </h3>
 
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div className="relative">
@@ -362,16 +435,28 @@ const FinalCTA = () => {
                     <SelectValue placeholder="Selecione uma faixa de investimento" />
                   </SelectTrigger>
                   <SelectContent className="bg-[hsl(var(--luxury-dark))] border border-white/10 text-white">
-                    <SelectItem value="Menos de R$ 1.500,00" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
+                    <SelectItem
+                      value="Menos de R$ 1.500,00"
+                      className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer"
+                    >
                       Menos de R$ 1.500,00
                     </SelectItem>
-                    <SelectItem value="Entre R$ 1.500,00 e R$ 5.000,00" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
+                    <SelectItem
+                      value="Entre R$ 1.500,00 e R$ 5.000,00"
+                      className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer"
+                    >
                       Entre R$ 1.500,00 e R$ 5.000,00
                     </SelectItem>
-                    <SelectItem value="Entre R$ 5.000,00 e R$ 10.000,00" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
+                    <SelectItem
+                      value="Entre R$ 5.000,00 e R$ 10.000,00"
+                      className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer"
+                    >
                       Entre R$ 5.000,00 e R$ 10.000,00
                     </SelectItem>
-                    <SelectItem value="Acima de R$ 10.000,00" className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer">
+                    <SelectItem
+                      value="Acima de R$ 10.000,00"
+                      className="hover:bg-[hsl(var(--f5-orange))]/10 cursor-pointer"
+                    >
                       Acima de R$ 10.000,00
                     </SelectItem>
                   </SelectContent>
