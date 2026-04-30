@@ -21,15 +21,7 @@ const WEBHOOK_URL =
   "https://crmhomologacao.mbmtecnologia.com.br/api/v1/webhook/inbound/cmolmaz0x000fj1ak55oq0xht?token=4B5Br9dx0-xScNdB_y0V2Nz0CH7k8P8V";
 
 // Lista de chaves UTM que serão persistidas
-const UTM_KEYS = [
-  "utm_source",
-  "utm_medium",
-  "utm_campaign",
-  "utm_term",
-  "utm_content",
-  "utm_adgroup",
-  "posicionamento",
-] as const;
+const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "utm_adgroup"] as const;
 
 const formSchema = z.object({
   nome: z.string().trim().min(1, "Nome é obrigatório"),
@@ -140,7 +132,6 @@ const FinalCTA = () => {
         utm_term: utms.utm_term,
         utm_content: utms.utm_content,
         utm_adgroup: utms.utm_adgroup,
-        posicionamento: utms.posicionamento,
 
         // Campos do formulário que NÃO são canônicos — vão pra description do
         // negócio + metadata do LeadEvent. Mantém o snake_case usado.
@@ -179,7 +170,6 @@ const FinalCTA = () => {
         utm_term: utms.utm_term,
         utm_content: utms.utm_content,
         utm_adgroup: utms.utm_adgroup,
-        posicionamento: utms.posicionamento,
         nome_formulario: "Formulário F5 Odonto",
         id_formulario: "form-f5-principal",
         id_pagina: window.location.pathname,
