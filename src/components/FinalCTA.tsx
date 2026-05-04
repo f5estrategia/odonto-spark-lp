@@ -18,7 +18,7 @@ const supabase = createClient(
 
 // ✏️ MUDANÇA 1 — URL real do webhook do CRM (com ?token= já incluso)
 const WEBHOOK_URL =
-  "https://crmhomologacao.mbmtecnologia.com.br/api/v1/webhook/inbound/cmolmaz0x000fj1ak55oq0xht?token=4B5Br9dx0-xScNdB_y0V2Nz0CH7k8P8V";
+  "https://crm.mbmtecnologia.com.br/api/v1/webhook/inbound/cmorekkwq00bo7im9zpa9jn3h?token=3b3bAJ4WmYmaDj2ahQOOuu-Sd124ZLuN";
 
 // Lista de chaves UTM que serão persistidas
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "utm_adgroup"] as const;
